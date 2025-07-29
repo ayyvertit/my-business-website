@@ -1,0 +1,289 @@
+/* Crystal Coast Luxury Spa Color System */
+:root {
+  /* Debug: Force background colors for testing */
+  --debug-light: #FDF6F0;
+  --debug-dark: #0a0f1a;
+  
+  /* Base Colors - Spa Luxury Palette */
+  --fg: #285A6F; /* Deep Tide */
+  --accent: #7FCAC5; /* Sea Glass Teal */
+  --muted: #B9D6D4; /* Coastal Mist */
+  --surface: #E7F3F4; /* Ocean Foam - softer than white */
+  
+  /* Luxury Spa Gradients */
+  --gradient-1: linear-gradient(135deg, #E7F3F4 0%, #FDF6F0 100%); /* Ocean Foam to White Sand */
+  --gradient-2: linear-gradient(135deg, #B9D6D4 0%, #E7F3F4 100%); /* Coastal Mist to Ocean Foam */
+  --gradient-3: linear-gradient(135deg, #7FCAC5 0%, #B9D6D4 100%); /* Sea Glass to Coastal Mist */
+  --gradient-mesh: radial-gradient(ellipse at top left, #E7F3F4 0%, #B9D6D4 40%, #7FCAC5 70%, #F7B6A6 100%);
+  
+  /* Dark Mode Gradients */
+  --gradient-1-dark: linear-gradient(135deg, #1a2332 0%, #0a0f1a 100%);
+  --gradient-2-dark: linear-gradient(135deg, #285A6F 0%, #1a2332 100%);
+  --gradient-3-dark: linear-gradient(135deg, #7FCAC5 0%, #285A6F 100%);
+  --gradient-mesh-dark: radial-gradient(ellipse at top left, #1a2332 0%, #285A6F 40%, #7FCAC5 70%, #F7B6A6 100%);
+  
+  /* Crystal Coast Luxury Palette */
+  --white-sand: #FDF6F0;
+  --ocean-foam: #E7F3F4;
+  --coastal-mist: #B9D6D4;
+  --sea-glass: #7FCAC5;
+  --coral-blush: #F7B6A6;
+  --deep-tide: #285A6F;
+  
+  /* Semantic Colors */
+  --primary: var(--sea-glass);
+  --primary-foreground: var(--deep-tide);
+  --secondary: var(--coastal-mist);
+  --secondary-foreground: var(--deep-tide);
+  --destructive: var(--coral-blush);
+  --destructive-foreground: var(--white-sand);
+  
+  /* UI Colors */
+  --border: var(--coastal-mist);
+  --input: var(--coastal-mist);
+  --ring: var(--sea-glass);
+  --background: var(--ocean-foam); /* Changed from white-sand to ocean-foam for softer look */
+  --foreground: var(--deep-tide);
+  --card: var(--white-sand); /* Cards can stay slightly whiter for contrast */
+  --card-foreground: var(--deep-tide);
+  --popover: var(--white-sand);
+  --popover-foreground: var(--deep-tide);
+  
+  /* Alias for Tailwind compatibility */
+  --bg: var(--background);
+  
+  /* Enhanced Typography System - Inspired by Apple/Stripe */
+  --display-1: clamp(3rem, 8vw, 6rem);
+  --display-2: clamp(2.5rem, 6vw, 4.5rem);
+  --display-3: clamp(2rem, 5vw, 3.5rem);
+  --heading-1: clamp(1.75rem, 4vw, 2.75rem);
+  --heading-2: clamp(1.5rem, 3.5vw, 2.25rem);
+  --heading-3: clamp(1.25rem, 3vw, 1.875rem);
+  --body-large: clamp(1.125rem, 2vw, 1.25rem);
+  --body: clamp(1rem, 1.5vw, 1.125rem);
+  --body-small: clamp(0.875rem, 1.2vw, 1rem);
+  --caption: clamp(0.75rem, 1vw, 0.875rem);
+  
+  /* Whitespace Rhythm - Inspired by Apple/Stripe */
+  --space-1: 0.25rem;   /* 4px */
+  --space-2: 0.5rem;    /* 8px */
+  --space-3: 0.75rem;   /* 12px */
+  --space-4: 1rem;      /* 16px */
+  --space-5: 1.25rem;   /* 20px */
+  --space-6: 1.5rem;    /* 24px */
+  --space-8: 2rem;      /* 32px */
+  --space-10: 2.5rem;   /* 40px */
+  --space-12: 3rem;     /* 48px */
+  --space-16: 4rem;     /* 64px */
+  --space-20: 5rem;     /* 80px */
+  --space-24: 6rem;     /* 96px */
+  --space-32: 8rem;     /* 128px */
+  --space-40: 10rem;    /* 160px */
+  --space-48: 12rem;    /* 192px */
+  
+  /* Design Tokens */
+  --radius: 0.75rem;
+  --radius-lg: 1rem;
+  --radius-xl: 1.5rem;
+  --radius-2xl: 2rem;
+  --font-weight-light: 300;
+  --font-weight-normal: 400;
+  --font-weight-medium: 500;
+  --font-weight-semibold: 600;
+  --font-weight-bold: 700;
+  
+  /* Shadows & Elevation - Inspired by Stripe */
+  --shadow-soft: 0 1px 3px 0 rgb(0 0 0 / 0.1), 0 1px 2px -1px rgb(0 0 0 / 0.1);
+  --shadow-md: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
+  --shadow-lg: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);
+  --shadow-xl: 0 20px 25px -5px rgb(0 0 0 / 0.1), 0 10px 10px -5px rgb(0 0 0 / 0.04);
+  --shadow-2xl: 0 25px 50px -12px rgb(0 0 0 / 0.25);
+  --shadow-lg-glow: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1), 0 0 0 1px rgb(255 255 255 / 0.05);
+  
+  /* Container Max Widths - Inspired by Apple/Stripe */
+  --container-sm: 640px;
+  --container-md: 768px;
+  --container-lg: 1024px;
+  --container-xl: 1280px;
+  --container-2xl: 1440px;
+  --container-3xl: 1600px;
+}
+
+/* Dark Theme - Evening Spa */
+.dark {
+  --background: #0a0f1a;
+  --foreground: #E7F3F4;
+  --accent: #7FCAC5;
+  --muted: #1a2332;
+  --surface: #1a2332;
+  
+  --border: #285A6F;
+  --input: #285A6F;
+  --card: var(--surface);
+  --card-foreground: var(--foreground);
+  --popover: var(--surface);
+  --popover-foreground: var(--foreground);
+  
+  /* Alias for Tailwind compatibility */
+  --bg: var(--background);
+  
+  /* Override gradients for dark mode */
+  --gradient-1: var(--gradient-1-dark);
+  --gradient-2: var(--gradient-2-dark);
+  --gradient-3: var(--gradient-3-dark);
+  --gradient-mesh: var(--gradient-mesh-dark);
+}
+
+/* Base styles */
+body {
+  font-family: 'Lato', 'Inter', system-ui, sans-serif;
+  line-height: 1.6;
+  color: var(--foreground);
+  background: var(--background);
+  font-size: var(--body);
+}
+
+/* Typography utilities - Inspired by Apple/Stripe */
+.display-1 {
+  font-size: var(--display-1);
+  font-weight: var(--font-weight-bold);
+  line-height: 1.1;
+  font-family: 'Playfair Display', serif;
+  letter-spacing: -0.02em;
+}
+
+.display-2 {
+  font-size: var(--display-2);
+  font-weight: var(--font-weight-bold);
+  line-height: 1.1;
+  font-family: 'Playfair Display', serif;
+  letter-spacing: -0.01em;
+}
+
+.display-3 {
+  font-size: var(--display-3);
+  font-weight: var(--font-weight-semibold);
+  line-height: 1.2;
+  font-family: 'Playfair Display', serif;
+}
+
+.heading-1 {
+  font-size: var(--heading-1);
+  font-weight: var(--font-weight-semibold);
+  line-height: 1.2;
+  font-family: 'Playfair Display', serif;
+}
+
+.heading-2 {
+  font-size: var(--heading-2);
+  font-weight: var(--font-weight-semibold);
+  line-height: 1.3;
+  font-family: 'Playfair Display', serif;
+}
+
+.heading-3 {
+  font-size: var(--heading-3);
+  font-weight: var(--font-weight-medium);
+  line-height: 1.4;
+  font-family: 'Playfair Display', serif;
+}
+
+.body-large {
+  font-size: var(--body-large);
+  line-height: 1.6;
+  max-width: 65ch;
+}
+
+.body {
+  font-size: var(--body);
+  line-height: 1.6;
+  max-width: 65ch;
+}
+
+.body-small {
+  font-size: var(--body-small);
+  line-height: 1.5;
+  max-width: 65ch;
+}
+
+.caption {
+  font-size: var(--caption);
+  line-height: 1.4;
+}
+
+/* Container utilities - Inspired by Apple/Stripe */
+.container-responsive {
+  width: 100%;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: var(--space-4);
+  padding-right: var(--space-4);
+}
+
+@media (min-width: 640px) {
+  .container-responsive {
+    padding-left: var(--space-6);
+    padding-right: var(--space-6);
+  }
+}
+
+@media (min-width: 1024px) {
+  .container-responsive {
+    padding-left: var(--space-8);
+    padding-right: var(--space-8);
+  }
+}
+
+.container-content {
+  max-width: var(--container-lg);
+}
+
+.container-wide {
+  max-width: var(--container-2xl);
+}
+
+.container-hero {
+  max-width: var(--container-3xl);
+}
+
+/* Section spacing - Inspired by Apple/Stripe */
+.section-padding {
+  padding-top: var(--space-24);
+  padding-bottom: var(--space-24);
+}
+
+.section-padding-sm {
+  padding-top: var(--space-16);
+  padding-bottom: var(--space-16);
+}
+
+.section-padding-lg {
+  padding-top: var(--space-32);
+  padding-bottom: var(--space-32);
+}
+
+/* Focus styles for accessibility */
+*:focus-visible {
+  outline: 2px solid var(--sea-glass);
+  outline-offset: 2px;
+}
+
+/* Reduced motion for accessibility */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+
+* {
+  border-color: hsl(var(--border));
+}
+
+body {
+  background-color: var(--background) !important;
+  color: var(--foreground) !important;
+} 

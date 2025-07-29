@@ -1,0 +1,225 @@
+"use client"
+
+import { motion } from "framer-motion"
+import { Check, Clock, Star } from "lucide-react"
+import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "../ui/card"
+import { Button } from "../ui/button"
+import { staggerContainer, staggerItem, hoverLift } from "../../lib/motion"
+
+const services = [
+  {
+    name: "Swedish Massage",
+    duration: "60 min",
+    price: "$90",
+    description: "Classic relaxation massage with long, flowing strokes",
+    features: [
+      "Full body massage",
+      "Stress relief",
+      "Improved circulation",
+      "Muscle tension release"
+    ],
+    popular: false
+  },
+  {
+    name: "Therapeutic Massage",
+    duration: "60 min",
+    price: "$100",
+    description: "Deep tissue work for chronic pain and muscle issues",
+    features: [
+      "Deep tissue techniques",
+      "Pain management",
+      "Injury recovery",
+      "Postural correction"
+    ],
+    popular: true
+  },
+  {
+    name: "Swedish Massage",
+    duration: "90 min",
+    price: "$115",
+    description: "Extended session for complete relaxation and recovery",
+    features: [
+      "Extended full body",
+      "Enhanced relaxation",
+      "Deeper muscle work",
+      "Comprehensive care"
+    ],
+    popular: false
+  },
+  {
+    name: "Therapeutic Massage",
+    duration: "90 min",
+    price: "$125",
+    description: "Comprehensive deep tissue session for serious issues",
+    features: [
+      "Extended deep tissue",
+      "Chronic pain relief",
+      "Injury rehabilitation",
+      "Long-term healing"
+    ],
+    popular: false
+  },
+  {
+    name: "TMJ/MediCupping",
+    duration: "30 min",
+    price: "$55",
+    description: "Specialized treatment for jaw tension and cupping therapy",
+    features: [
+      "TMJ relief",
+      "Cupping therapy",
+      "Facial tension release",
+      "Targeted treatment"
+    ],
+    popular: false
+  }
+]
+
+export function ServicesSection() {
+  return (
+    <motion.section 
+      className="relative py-24 bg-gradient-to-b from-bg via-surface/50 to-bg dark:from-bg dark:via-surface/20 dark:to-bg overflow-hidden"
+      initial={{ opacity: 0, y: 24 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      transition={{ duration: 0.8, ease: [0.25, 0.1, 0.25, 1] }}
+      viewport={{ once: true }}
+    >
+      {/* Ambient background */}
+      <div className="absolute inset-0 bg-gradient-2 opacity-10 dark:opacity-5" />
+      <div className="absolute inset-0 bg-gradient-to-br from-[var(--sea-glass)]/5 via-[var(--ocean-foam)]/10 to-[var(--coral-blush)]/5 dark:from-[var(--sea-glass)]/3 dark:via-[var(--deep-tide)]/8 dark:to-[var(--coral-blush)]/3" />
+      
+      <div className="container-responsive">
+        {/* Section Header - Better spacing and typography */}
+        <motion.div
+          className="text-center mb-20"
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.5 }}
+        >
+          <motion.div
+            className="inline-flex items-center space-x-2 px-4 py-2 bg-[var(--sea-glass)]/10 rounded-full mb-8 border border-[var(--sea-glass)]/20"
+            initial={{ opacity: 0, scale: 0.8 }}
+            whileInView={{ opacity: 1, scale: 1 }}
+            viewport={{ once: true }}
+            transition={{ delay: 0.1, duration: 0.5 }}
+          >
+            <Star className="w-4 h-4 text-[var(--sea-glass)]" />
+            <span className="text-sm font-medium text-[var(--sea-glass)]">Our Services</span>
+          </motion.div>
+          
+          <motion.h2
+            className="heading-1 font-display font-bold mb-8 text-[var(--deep-tide)]"
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ delay: 0.2, duration: 0.5 }}
+          >
+            Luxury <span className="text-[var(--sea-glass)]">Spa Services</span>
+          </motion.h2>
+          
+          <motion.p
+            className="body-large text-[var(--deep-tide)]/70 max-w-3xl mx-auto leading-relaxed"
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ delay: 0.3, duration: 0.5 }}
+          >
+            Experience clinical-grade massage therapy in the comfort of your own space. 
+            Each session is tailored to your specific needs and goals.
+          </motion.p>
+        </motion.div>
+
+        {/* Services Grid - Better spacing and layout */}
+        <motion.div
+          className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-7xl mx-auto"
+          variants={staggerContainer}
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true }}
+        >
+          {services.map((service, index) => (
+            <motion.div
+              key={service.name + service.duration}
+              variants={staggerItem}
+              whileHover="hover"
+              custom={index}
+            >
+              <Card className="h-full relative group" variant="elevated">
+                {service.popular && (
+                  <div className="absolute -top-3 left-1/2 transform -translate-x-1/2">
+                    <div className="bg-gradient-to-r from-[var(--sea-glass)] to-[var(--coral-blush)] text-white px-4 py-1 rounded-full text-sm font-medium shadow-lg">
+                      Most Popular
+                    </div>
+                  </div>
+                )}
+                
+                <CardHeader className="pb-6">
+                  <div className="flex items-start justify-between mb-4">
+                    <CardTitle className="heading-3 font-display text-[var(--deep-tide)]">{service.name}</CardTitle>
+                    <div className="flex items-center space-x-2 text-[var(--deep-tide)]/60">
+                      <Clock className="w-4 h-4" />
+                      <span className="text-sm font-medium">{service.duration}</span>
+                    </div>
+                  </div>
+                  <CardDescription className="body text-[var(--deep-tide)]/70 mb-4">
+                    {service.description}
+                  </CardDescription>
+                  <div className="text-3xl font-bold text-[var(--sea-glass)]">
+                    {service.price}
+                  </div>
+                </CardHeader>
+                
+                <CardContent className="pt-0">
+                  <ul className="space-y-4 mb-8">
+                    {service.features.map((feature) => (
+                      <li key={feature} className="flex items-start space-x-3">
+                        <Check className="w-5 h-5 text-[var(--sea-glass)] mt-0.5 flex-shrink-0" />
+                        <span className="body-small text-[var(--deep-tide)]/70">{feature}</span>
+                      </li>
+                    ))}
+                  </ul>
+                  
+                  <Button variant="gradient" className="w-full group shadow-md hover:shadow-lg">
+                    Book This Session
+                  </Button>
+                </CardContent>
+              </Card>
+            </motion.div>
+          ))}
+        </motion.div>
+
+        {/* Add-ons Section - Better spacing and layout */}
+        <motion.div
+          className="mt-24 text-center"
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ delay: 0.5, duration: 0.5 }}
+        >
+          <h3 className="heading-2 font-display font-bold mb-6 text-[var(--deep-tide)]">
+            Additional <span className="text-[var(--sea-glass)]">Modalities</span>
+          </h3>
+          <p className="body text-[var(--deep-tide)]/70 mb-12 max-w-2xl mx-auto">
+            Enhance your session with these specialized techniques. All available upon request.
+          </p>
+          
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-6 max-w-3xl mx-auto">
+            {[
+              "Cupping Therapy",
+              "Gua Sha",
+              "Hot Stones",
+              "Aromatherapy"
+            ].map((modality) => (
+              <div
+                key={modality}
+                className="bg-[var(--ocean-foam)]/50 dark:bg-[var(--deep-tide)]/20 rounded-2xl p-6 text-sm font-medium text-[var(--deep-tide)] border border-[var(--sea-glass)]/20"
+              >
+                {modality}
+              </div>
+            ))}
+          </div>
+        </motion.div>
+      </div>
+    </motion.section>
+  )
+} 
