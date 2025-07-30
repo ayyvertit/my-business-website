@@ -42,7 +42,7 @@
   --border: var(--coastal-mist);
   --input: var(--coastal-mist);
   --ring: var(--sea-glass);
-  --background: var(--ocean-foam); /* Changed from white-sand to ocean-foam for softer look */
+  --background: var(--white-sand); /* Warm off-white background for light theme */
   --foreground: var(--deep-tide);
   --card: var(--white-sand); /* Cards can stay slightly whiter for contrast */
   --card-foreground: var(--deep-tide);
@@ -141,6 +141,12 @@ body {
   color: var(--foreground);
   background: var(--background);
   font-size: var(--body);
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+/* Theme transition styles */
+* {
+  transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
 }
 
 /* Typography utilities - Inspired by Apple/Stripe */
@@ -266,6 +272,13 @@ body {
 *:focus-visible {
   outline: 2px solid var(--sea-glass);
   outline-offset: 2px;
+}
+
+/* Disable animations for theme toggle */
+.no-animation {
+  transition: none !important;
+  animation: none !important;
+  transform: none !important;
 }
 
 /* Reduced motion for accessibility */

@@ -84,42 +84,19 @@ export function Header() {
 
           {/* Theme Toggle */}
           <div className="ml-4">
-            <motion.div
-              whileHover={{ x: 4 }}
-              transition={{ duration: 0.2 }}
+            <Button
+              variant="primary"
+              size="icon"
+              onClick={toggleTheme}
+              className="w-10 h-10 p-0 rounded-full bg-blue-300 hover:bg-blue-400"
+              aria-label={`Switch to ${theme === "light" ? "dark" : "light"} mode`}
             >
-              <Button
-                variant="ghost"
-                size="icon"
-                onClick={toggleTheme}
-                className="w-10 h-10 p-0 relative overflow-hidden rounded-full"
-                aria-label={`Switch to ${theme === "light" ? "dark" : "light"} mode`}
-              >
-                <AnimatePresence mode="wait">
-                  {theme === "light" ? (
-                    <motion.div
-                      key="moon"
-                      initial={{ opacity: 0 }}
-                      animate={{ opacity: 1 }}
-                      exit={{ opacity: 0 }}
-                      transition={{ duration: 0.2 }}
-                    >
-                      <Moon className="w-5 h-5" />
-                    </motion.div>
-                  ) : (
-                    <motion.div
-                      key="sun"
-                      initial={{ opacity: 0 }}
-                      animate={{ opacity: 1 }}
-                      exit={{ opacity: 0 }}
-                      transition={{ duration: 0.2 }}
-                    >
-                      <Sun className="w-5 h-5" />
-                    </motion.div>
-                  )}
-                </AnimatePresence>
-              </Button>
-            </motion.div>
+              {theme === "light" ? (
+                <Moon className="w-5 h-5 text-white" />
+              ) : (
+                <Sun className="w-5 h-5 text-white" />
+              )}
+            </Button>
           </div>
 
           {/* Mobile Menu Button */}
