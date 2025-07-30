@@ -16,6 +16,11 @@ const config: Config = {
       },
     },
     extend: {
+      screens: {
+        'xs': '480px',
+        'xs-sm': '375px',
+        'xs-xs': '320px',
+      },
       colors: {
         fg: "var(--fg)",
         accent: "var(--accent)",

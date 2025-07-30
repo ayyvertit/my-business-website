@@ -30,8 +30,8 @@ export default function Footer() {
               </div>
             </div>
             <p className="text-gray-300 mb-8 leading-relaxed max-w-lg text-lg">
-              Premium in-home massage therapy delivered to your doorstep, dock, or vacation rental. 
-              Experience luxury wellness in the comfort of your own space on North Carolina's stunning Crystal Coast.
+              Premium in-home massage therapy delivered to your doorstep, dock, or vacation rental.
+              Experience luxury wellness in the comfort of your own space on North Carolina&apos;s stunning Crystal Coast.
             </p>
             <div className="flex flex-wrap gap-6">
               <div className="flex items-center space-x-3 text-gray-300 group">
@@ -117,7 +117,7 @@ export default function Footer() {
           <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-8 gap-4 text-center">
             {[
               'Emerald Isle',
-              'Atlantic Beach', 
+              'Atlantic Beach',
               'Morehead City',
               'Beaufort',
               'Newport',

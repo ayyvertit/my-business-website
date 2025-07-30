@@ -2,34 +2,34 @@
 
 import { motion } from "framer-motion"
 import { ArrowRight, Sparkles, Star, Shield, Truck, Heart } from "lucide-react"
-import { Button } from "../ui/button"
+
 import { AnimatedBackground } from "../animations/AnimatedBackground"
 import { fadeInUp, staggerContainer, staggerItem } from "../../lib/motion"
 import Link from "next/link"
 
 export function HeroSection() {
   return (
-    <section 
+    <section
       aria-labelledby="hero-heading"
       className="relative min-h-screen flex items-center justify-center overflow-hidden bg-gradient-to-b from-[var(--ocean-foam)] to-[var(--white-sand)] dark:from-[var(--deep-tide)] dark:to-[var(--background)]"
     >
       {/* Realistic wave background */}
       <AnimatedBackground />
-      
+
       {/* Content */}
       <div className="container-responsive relative z-10">
         <motion.div
-          className="text-center max-w-6xl mx-auto px-4"
+          className="text-center max-w-6xl mx-auto px-3 sm:px-4"
           variants={staggerContainer}
           initial="hidden"
           animate="visible"
         >
           {/* Eyebrow - Better spacing and visual separation */}
           <motion.div
-            className="flex flex-col sm:flex-row items-center justify-center space-y-3 sm:space-y-0 sm:space-x-6 mb-16"
+            className="flex flex-col sm:flex-row items-center justify-center space-y-3 sm:space-y-0 sm:space-x-6 mb-12 sm:mb-16"
             variants={staggerItem}
           >
-            <div className="flex items-center space-x-2 px-4 py-2 bg-[var(--sea-glass)]/10 rounded-full border border-[var(--sea-glass)]/20">
+            <div className="flex items-center space-x-2 px-3 sm:px-4 py-2 bg-[var(--sea-glass)]/10 rounded-full border border-[var(--sea-glass)]/20">
               <Sparkles className="w-4 h-4 text-[var(--sea-glass)]" />
               <span className="text-sm font-medium text-[var(--sea-glass)]">Concierge Massage</span>
             </div>
@@ -43,7 +43,7 @@ export function HeroSection() {
           {/* Main Headline - Better line breaks and spacing */}
           <motion.h1
             id="hero-heading"
-            className="display-1 font-display font-bold leading-tight mb-16 text-[var(--deep-tide)] max-w-5xl mx-auto"
+            className="display-1 font-display font-bold leading-tight mb-12 sm:mb-16 text-[var(--deep-tide)] max-w-5xl mx-auto"
             variants={staggerItem}
           >
             <span className="block text-[var(--deep-tide)]">Relief.</span>
@@ -53,29 +53,25 @@ export function HeroSection() {
 
           {/* Subheadline - Better paragraph spacing and width */}
           <motion.p
-            className="body-large text-[var(--deep-tide)]/80 max-w-3xl mx-auto mb-20 leading-relaxed"
+            className="body-large text-[var(--deep-tide)]/80 max-w-3xl mx-auto mb-16 sm:mb-20 leading-relaxed"
             variants={staggerItem}
           >
-            Experience the ultimate in luxury mobile massage therapy. Professional, clinical-grade 
+            Experience the ultimate in luxury mobile massage therapy. Professional, clinical-grade
             treatments delivered to your doorstep with the highest standards of care and ethics.
           </motion.p>
 
           {/* CTA Buttons - Better spacing and layout */}
           <motion.div
-            className="flex flex-col sm:flex-row items-center justify-center space-y-4 sm:space-y-0 sm:space-x-6 mb-24"
+            className="flex flex-col sm:flex-row items-center justify-center space-y-4 sm:space-y-0 sm:space-x-6 mb-20 sm:mb-24"
             variants={staggerItem}
           >
-            <Button size="lg" variant="gradient" className="group min-w-[200px]" asChild>
-              <Link href="/booking">
-                Book Your Session
-                <ArrowRight className="ml-2 w-5 h-5 group-hover:translate-x-1 transition-transform" />
-              </Link>
-            </Button>
-            <Button size="lg" variant="secondaryOutline" className="min-w-[200px]" asChild>
-              <Link href="/services">
-                View Services & Pricing
-              </Link>
-            </Button>
+            <Link href="/booking" className="inline-flex items-center justify-center px-6 sm:px-8 py-4 bg-gradient-to-r from-[var(--sea-glass)] to-[var(--coral-blush)] text-white font-semibold rounded-full shadow-lg hover:shadow-xl transition-all duration-300 group w-full sm:w-auto sm:min-w-[200px] min-h-[44px]">
+              Book Your Session
+              <ArrowRight className="ml-2 w-5 h-5 group-hover:translate-x-1 transition-transform" />
+            </Link>
+            <Link href="/services" className="inline-flex items-center justify-center px-6 sm:px-8 py-4 border-2 border-[var(--sea-glass)] text-[var(--sea-glass)] font-semibold rounded-full hover:bg-[var(--sea-glass)] hover:text-white transition-all duration-300 w-full sm:w-auto sm:min-w-[200px] min-h-[44px]">
+              View Services & Pricing
+            </Link>
           </motion.div>
 
           {/* Trust Indicators - Better spacing and visual separation */}
@@ -99,9 +95,9 @@ export function HeroSection() {
         </motion.div>
       </div>
 
-      {/* Scroll Indicator - Better positioning */}
+      {/* Scroll Indicator - Better positioning for small screens */}
       <motion.div
-        className="absolute bottom-12 left-1/2 transform -translate-x-1/2"
+        className="absolute bottom-8 sm:bottom-12 left-1/2 transform -translate-x-1/2"
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ delay: 1, duration: 0.5 }}

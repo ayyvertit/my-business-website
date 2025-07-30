@@ -56,8 +56,83 @@
   * {
     @apply border-border;
   }
+
   body {
     @apply bg-background text-foreground;
+  }
+
+  /* Smooth theme transitions */
+  * {
+    transition: background-color 0.8s ease-in-out,
+      color 0.8s ease-in-out,
+      border-color 0.8s ease-in-out,
+      box-shadow 0.8s ease-in-out;
+  }
+
+  /* Specific elements that need slower transitions */
+  html {
+    transition: background-color 1.2s ease-in-out;
+  }
+
+  body {
+    transition: background-color 1.2s ease-in-out,
+      color 1.2s ease-in-out;
+  }
+
+  /* Headers and navigation */
+  header,
+  nav,
+  .header-element {
+    transition: background-color 1s ease-in-out,
+      color 1s ease-in-out,
+      border-color 1s ease-in-out;
+  }
+
+  /* Cards and containers */
+  .card,
+  .container,
+  [class*="bg-"] {
+    transition: background-color 1s ease-in-out,
+      border-color 1s ease-in-out,
+      box-shadow 1s ease-in-out;
+  }
+
+  /* Text elements */
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6,
+  p,
+  span,
+  div {
+    transition: color 0.8s ease-in-out;
+  }
+
+  /* Buttons and interactive elements */
+  button,
+  a,
+  [role="button"] {
+    transition: background-color 0.6s ease-in-out,
+      color 0.6s ease-in-out,
+      border-color 0.6s ease-in-out,
+      transform 0.3s ease-in-out,
+      box-shadow 0.6s ease-in-out;
+  }
+
+  /* Theme toggle specific */
+  .theme-toggle {
+    transition: background-color 0.8s ease-in-out,
+      transform 0.3s ease-in-out,
+      box-shadow 0.8s ease-in-out;
+  }
+
+  /* Disable transitions for reduced motion preference */
+  @media (prefers-reduced-motion: reduce) {
+    * {
+      transition: none !important;
+    }
   }
 }
 
@@ -66,24 +141,31 @@
   0% {
     transform: translateX(-100%);
   }
+
   100% {
     transform: translateX(100%);
   }
 }
 
 @keyframes float {
-  0%, 100% {
+
+  0%,
+  100% {
     transform: translateY(0px);
   }
+
   50% {
     transform: translateY(-20px);
   }
 }
 
 @keyframes pulse-glow {
-  0%, 100% {
+
+  0%,
+  100% {
     box-shadow: 0 0 20px rgba(127, 202, 197, 0.3);
   }
+
   50% {
     box-shadow: 0 0 30px rgba(127, 202, 197, 0.6);
   }
@@ -93,9 +175,11 @@
   0% {
     background-position: 0% 50%;
   }
+
   50% {
     background-position: 100% 50%;
   }
+
   100% {
     background-position: 0% 50%;
   }
@@ -127,12 +211,10 @@
   left: -100%;
   width: 100%;
   height: 100%;
-  background: linear-gradient(
-    90deg,
-    transparent,
-    rgba(255, 255, 255, 0.2),
-    transparent
-  );
+  background: linear-gradient(90deg,
+      transparent,
+      rgba(255, 255, 255, 0.2),
+      transparent);
   animation: shimmer 2s infinite;
 }
 
@@ -176,11 +258,27 @@
 
 /* Reduced motion for accessibility */
 @media (prefers-reduced-motion: reduce) {
+
   *,
   *::before,
   *::after {
     animation-duration: 0.01ms !important;
     animation-iteration-count: 1 !important;
     transition-duration: 0.01ms !important;
+  }
+}
+
+/* Water wave animation for text effect */
+@keyframes wave {
+  0% {
+    background-position: 0% 50%;
+  }
+
+  50% {
+    background-position: 100% 50%;
+  }
+
+  100% {
+    background-position: 0% 50%;
   }
 }

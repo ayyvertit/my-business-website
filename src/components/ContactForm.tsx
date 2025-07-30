@@ -64,7 +64,7 @@ export default function ContactForm() {
       {submitStatus === 'success' && (
         <div className="mb-6 p-4 bg-green-50 border border-green-200 rounded-lg">
           <p className="text-green-800 text-center">
-            Thank you! We'll contact you soon to confirm your appointment.
+            Thank you! We&apos;ll contact you soon to confirm your appointment.
           </p>
         </div>
       )}
@@ -202,8 +202,11 @@ export default function ContactForm() {
       </form>
 
       <div className="mt-6 p-4 bg-teal-50 rounded-lg">
-        <p className="text-sm text-teal-800 text-center">
-          <strong>Note:</strong> We'll contact you within 24 hours to confirm your appointment details.
+        <p className="text-sm text-gray-600 dark:text-gray-400 mb-6">
+          We&apos;re here to help you relax and rejuvenate. Send us a message and we&apos;ll get back to you as soon as possible.
+        </p>
+        <p className="text-sm text-gray-600 dark:text-gray-400">
+          Don&apos;t see what you&apos;re looking for? Contact us for custom packages and special requests.
         </p>
       </div>
     </div>
