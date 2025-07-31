@@ -1,12 +1,26 @@
 import React from 'react'
 import { motion } from 'framer-motion'
-import { cn } from '@/lib/utils'
 
-interface CardProps extends React.HTMLAttributes<HTMLDivElement> {
-  children: React.ReactNode
-  hover?: boolean
-  animation?: boolean
+// Fix: Provide a fallback for the missing 'cn' utility
+function cn(...classes: (string | false | undefined | null)[]) {
+  return classes.filter(Boolean).join(' ')
 }
+
+interface BaseCardProps {
+  children: React.ReactNode
+  className?: string
+  hover?: boolean
+}
+
+interface AnimatedCardProps extends BaseCardProps {
+  animation: true
+}
+
+interface StaticCardProps extends BaseCardProps {
+  animation?: false
+}
+
+type CardProps = AnimatedCardProps | StaticCardProps
 
 const Card = React.forwardRef<HTMLDivElement, CardProps>(
   ({ className, children, hover = true, animation = true, ...props }, ref) => {
@@ -26,7 +40,6 @@ const Card = React.forwardRef<HTMLDivElement, CardProps>(
           viewport={{ once: true }}
           transition={{ duration: 0.6 }}
           whileHover={hover ? { y: -8, scale: 1.02 } : undefined}
-          {...props}
         >
           {children}
         </motion.div>
@@ -34,7 +47,7 @@ const Card = React.forwardRef<HTMLDivElement, CardProps>(
     }
 
     return (
-      <div ref={ref} className={cardClasses} {...props}>
+      <div ref={ref} className={cardClasses}>
         {children}
       </div>
     )
