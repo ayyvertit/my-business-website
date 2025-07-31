@@ -12,9 +12,10 @@ export function DesktopHeader() {
       {/* Crystal Coast Concierge - Fixed positioned in top-left */}
       <div style={{
         position: 'fixed',
-        top: '16px',
+        top: '50%',
         left: '16px',
-        zIndex: 9999
+        zIndex: 9999,
+        transform: 'translateY(-50%)'
       }}>
         <div className="flex items-start gap-3">
           {/* Text */}
