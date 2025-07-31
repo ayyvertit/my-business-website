@@ -1,12 +1,35 @@
 "use client"
 
-import { useState } from "react"
+import { useState, useEffect } from "react"
 import { DesktopPage } from "./DesktopPage"
 import { TabletPage } from "./TabletPage"
 import { MobilePage } from "./MobilePage"
 
 export function DeviceSwitcher() {
   const [currentDevice, setCurrentDevice] = useState<'desktop' | 'tablet' | 'mobile'>('desktop')
+
+  // Auto-detect device on mount and window resize
+  useEffect(() => {
+    const detectDevice = () => {
+      const width = window.innerWidth
+      if (width < 768) {
+        setCurrentDevice('mobile')
+      } else if (width < 1024) {
+        setCurrentDevice('tablet')
+      } else {
+        setCurrentDevice('desktop')
+      }
+    }
+
+    // Set initial device
+    detectDevice()
+
+    // Listen for window resize
+    window.addEventListener('resize', detectDevice)
+    
+    // Cleanup
+    return () => window.removeEventListener('resize', detectDevice)
+  }, [])
 
   return (
     <div className="min-h-screen">
