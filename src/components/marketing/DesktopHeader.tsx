@@ -8,7 +8,7 @@ import Image from "next/image"
 export function DesktopHeader() {
   return (
     <header className="sticky top-0 z-50 bg-gradient-to-r from-[#F7B6A6] to-white dark:from-[var(--deep-tide)] dark:to-[var(--deep-tide)]/90 backdrop-blur supports-backdrop-blur:blur-md shadow-md relative">
-      {/* Force deployment update - Desktop header with logo and gradient */}
+      {/* Force fresh deployment - Desktop header with logo and gradient - Updated */}
       {/* Crystal Coast Concierge - Fixed positioned in top-left */}
       <div style={{
         position: 'fixed',
