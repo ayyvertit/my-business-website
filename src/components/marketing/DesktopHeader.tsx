@@ -12,14 +12,13 @@ export function DesktopHeader() {
       {/* Crystal Coast Concierge - Fixed positioned in top-left */}
       <div style={{
         position: 'fixed',
-        top: '50%',
+        top: '16px',
         left: '16px',
-        zIndex: 9999,
-        transform: 'translateY(-50%)'
+        zIndex: 9999
       }}>
         <div className="flex items-start gap-3">
-          {/* Text */}
-          <div className="flex flex-col items-start text-[var(--deep-tide)] dark:text-white leading-none">
+          {/* Text - Centered vertically in header */}
+          <div className="flex flex-col items-start text-[var(--deep-tide)] dark:text-white leading-none" style={{ marginTop: '8px' }}>
             <div style={{ position: 'relative' }}>
               <span style={{ fontSize: '24px', fontWeight: 'bold', letterSpacing: '0.05em' }}>CRYSTAL COAST</span>
             </div>
