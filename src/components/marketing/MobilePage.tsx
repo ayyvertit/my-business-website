@@ -83,7 +83,7 @@ export function MobilePage() {
               Relaxation, Delivered.
             </motion.h1>
             <motion.p
-              className="font-sans text-base sm:text-lg text-[var(--coastal-mist)] dark:text-[var(--ocean-foam)] mb-6 sm:mb-8"
+              className="font-sans text-base sm:text-lg text-[var(--deep-tide)] dark:text-[var(--ocean-foam)] mb-6 sm:mb-8"
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.2, ease: "easeOut" }}

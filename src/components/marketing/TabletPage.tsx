@@ -83,7 +83,7 @@ export function TabletPage() {
               Relaxation, Delivered.
             </motion.h1>
             <motion.p
-              className="font-sans text-xl text-[var(--coastal-mist)] dark:text-[var(--ocean-foam)] max-w-2xl mx-auto mb-10"
+              className="font-sans text-xl text-[var(--deep-tide)] dark:text-[var(--ocean-foam)] max-w-2xl mx-auto mb-10"
               initial={{ opacity: 0, y: 25 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 1, delay: 0.2, ease: "easeOut" }}

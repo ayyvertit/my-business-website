@@ -83,7 +83,7 @@ export function DesktopPage() {
               Relaxation, Delivered.
             </motion.h1>
             <motion.p
-              className="font-sans text-xl text-[var(--coastal-mist)] dark:text-[var(--ocean-foam)] max-w-3xl mx-auto mb-12 text-center leading-relaxed"
+              className="font-sans text-xl text-[var(--deep-tide)] dark:text-[var(--ocean-foam)] max-w-3xl mx-auto mb-12 text-center leading-relaxed"
               initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 1.2, delay: 0.3, ease: "easeOut" }}
