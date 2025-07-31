@@ -74,7 +74,8 @@ export function DesktopPage() {
           </div>
           <div className="max-w-6xl mx-auto px-8 text-center z-10">
             <motion.h1
-              className="font-serif text-7xl font-bold text-[var(--deep-tide)] dark:text-white mb-8 text-center"
+              className="font-serif font-bold text-[var(--deep-tide)] dark:text-white mb-8 text-center"
+              style={{ fontSize: '8rem', lineHeight: '1.1' }}
               initial={{ opacity: 0, y: 50 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 1.2, ease: "easeOut" }}

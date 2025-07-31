@@ -10,12 +10,12 @@ export function DeviceSwitcher() {
 
   return (
     <div className="min-h-screen">
-      {/* Device Switcher Controls */}
-      <div className="fixed top-4 left-4 z-[9999] bg-white/90 dark:bg-gray-800/90 backdrop-blur rounded-lg p-3 shadow-lg border border-gray-200 dark:border-gray-600">
-        <div className="flex gap-2">
+      {/* Device Switcher Controls - Moved to right, smaller size */}
+      <div className="fixed top-4 right-4 z-[9999] bg-white/90 dark:bg-gray-800/90 backdrop-blur rounded-lg p-2 shadow-lg border border-gray-200 dark:border-gray-600">
+        <div className="flex gap-1">
           <button
             onClick={() => setCurrentDevice('desktop')}
-            className={`px-3 py-1 rounded text-sm font-medium transition-colors ${currentDevice === 'desktop'
+            className={`px-2 py-0.5 rounded text-xs font-medium transition-colors ${currentDevice === 'desktop'
               ? 'bg-blue-500 text-white'
               : 'bg-gray-200 dark:bg-gray-700 text-gray-700 dark:text-gray-300'
               }`}
@@ -24,7 +24,7 @@ export function DeviceSwitcher() {
           </button>
           <button
             onClick={() => setCurrentDevice('tablet')}
-            className={`px-3 py-1 rounded text-sm font-medium transition-colors ${currentDevice === 'tablet'
+            className={`px-2 py-0.5 rounded text-xs font-medium transition-colors ${currentDevice === 'tablet'
               ? 'bg-blue-500 text-white'
               : 'bg-gray-200 dark:bg-gray-700 text-gray-700 dark:text-gray-300'
               }`}
@@ -33,7 +33,7 @@ export function DeviceSwitcher() {
           </button>
           <button
             onClick={() => setCurrentDevice('mobile')}
-            className={`px-3 py-1 rounded text-sm font-medium transition-colors ${currentDevice === 'mobile'
+            className={`px-2 py-0.5 rounded text-xs font-medium transition-colors ${currentDevice === 'mobile'
               ? 'bg-blue-500 text-white'
               : 'bg-gray-200 dark:bg-gray-700 text-gray-700 dark:text-gray-300'
               }`}
