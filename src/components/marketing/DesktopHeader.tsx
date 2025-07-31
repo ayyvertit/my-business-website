@@ -213,7 +213,7 @@ export function DesktopHeader() {
       {/* Theme Toggle - Fixed positioned on the right */}
       <div style={{
         position: 'fixed',
-        top: '48px',
+        top: '64px',
         right: '32px',
         zIndex: 9999,
         transform: 'translateY(-50%)'

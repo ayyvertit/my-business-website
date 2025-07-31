@@ -74,7 +74,7 @@ export function MobilePage() {
           </div>
           <div className="max-w-sm mx-auto px-4 text-center z-10">
             <motion.h1
-              className="font-serif text-4xl font-bold text-[var(--deep-tide)] dark:text-white mb-4"
+              className="font-serif text-6xl sm:text-7xl md:text-8xl font-black text-[var(--deep-tide)] dark:text-white mb-8 leading-none tracking-tight"
               initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, ease: "easeOut" }}
@@ -82,7 +82,7 @@ export function MobilePage() {
               Relaxation, Delivered.
             </motion.h1>
             <motion.p
-              className="font-sans text-base text-[var(--coastal-mist)] dark:text-[var(--ocean-foam)] mb-6"
+              className="font-sans text-lg text-[var(--coastal-mist)] dark:text-[var(--ocean-foam)] mb-8"
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.2, ease: "easeOut" }}
@@ -90,21 +90,21 @@ export function MobilePage() {
               Mobile massage experiences on the Crystal Coast — where luxury meets convenience.
             </motion.p>
             <motion.div
-              className="flex flex-col gap-3"
+              className="flex flex-col gap-4"
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.4, ease: "easeOut" }}
             >
               <motion.a
                 href="/booking"
-                className="inline-block bg-[var(--coral-blush)] text-white px-6 py-4 rounded-full shadow-md hover:shadow-lg transition-all duration-300 text-base font-semibold"
+                className="inline-block bg-[var(--coral-blush)] text-white px-8 py-4 rounded-full shadow-md hover:shadow-lg transition-all duration-300 text-lg font-semibold"
                 whileTap={{ scale: 0.98 }}
               >
                 Book Now
               </motion.a>
               <motion.a
                 href="/services"
-                className="inline-block border-2 border-[var(--sea-glass)] text-[var(--sea-glass)] px-6 py-4 rounded-full hover:bg-[var(--sea-glass)] hover:text-white transition-all duration-300 text-base font-semibold"
+                className="inline-block border-2 border-[var(--sea-glass)] text-[var(--sea-glass)] px-8 py-4 rounded-full hover:bg-[var(--sea-glass)] hover:text-white transition-all duration-300 text-lg font-semibold"
                 whileTap={{ scale: 0.98 }}
               >
                 View Services

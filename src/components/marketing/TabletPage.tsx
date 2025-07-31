@@ -74,7 +74,7 @@ export function TabletPage() {
           </div>
           <div className="max-w-5xl mx-auto px-6 text-center z-10">
             <motion.h1
-              className="font-serif text-5xl font-bold text-[var(--deep-tide)] dark:text-white mb-6"
+              className="font-serif text-7xl md:text-8xl lg:text-9xl font-black text-[var(--deep-tide)] dark:text-white mb-10 leading-none tracking-tight"
               initial={{ opacity: 0, y: 40 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 1, ease: "easeOut" }}
@@ -82,7 +82,7 @@ export function TabletPage() {
               Relaxation, Delivered.
             </motion.h1>
             <motion.p
-              className="font-sans text-lg text-[var(--coastal-mist)] dark:text-[var(--ocean-foam)] max-w-xl mx-auto mb-8"
+              className="font-sans text-xl text-[var(--coastal-mist)] dark:text-[var(--ocean-foam)] max-w-2xl mx-auto mb-10"
               initial={{ opacity: 0, y: 25 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 1, delay: 0.2, ease: "easeOut" }}
@@ -97,7 +97,7 @@ export function TabletPage() {
             >
               <motion.a
                 href="/booking"
-                className="inline-block bg-[var(--coral-blush)] text-white px-6 py-3 rounded-full shadow-lg hover:shadow-xl transition-all duration-300 text-base font-semibold"
+                className="inline-block bg-[var(--coral-blush)] text-white px-8 py-4 rounded-full shadow-lg hover:shadow-xl transition-all duration-300 text-lg font-semibold"
                 whileHover={{ scale: 1.03, y: -1 }}
                 whileTap={{ scale: 0.98 }}
               >
@@ -105,7 +105,7 @@ export function TabletPage() {
               </motion.a>
               <motion.a
                 href="/services"
-                className="inline-block border-2 border-[var(--sea-glass)] text-[var(--sea-glass)] px-6 py-3 rounded-full hover:bg-[var(--sea-glass)] hover:text-white transition-all duration-300 text-base font-semibold"
+                className="inline-block border-2 border-[var(--sea-glass)] text-[var(--sea-glass)] px-8 py-4 rounded-full hover:bg-[var(--sea-glass)] hover:text-white transition-all duration-300 text-lg font-semibold"
                 whileHover={{ scale: 1.03, y: -1 }}
                 whileTap={{ scale: 0.98 }}
               >

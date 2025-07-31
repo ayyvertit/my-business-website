@@ -10,35 +10,35 @@ export function DeviceSwitcher() {
 
   return (
     <div className="min-h-screen">
-      {/* Device Switcher Controls - Moved to right, smaller size */}
-      <div className="fixed top-4 right-4 z-[9999] bg-white/90 dark:bg-gray-800/90 backdrop-blur rounded-lg p-2 shadow-lg border border-gray-200 dark:border-gray-600">
-        <div className="flex gap-1">
+      {/* Device Switcher Controls - Much smaller and repositioned */}
+      <div className="fixed top-2 right-6 z-[9998] bg-white/80 dark:bg-gray-800/80 backdrop-blur rounded-md p-1 shadow-sm border border-gray-200 dark:border-gray-600">
+        <div className="flex gap-0.5">
           <button
             onClick={() => setCurrentDevice('desktop')}
-            className={`px-2 py-0.5 rounded text-xs font-medium transition-colors ${currentDevice === 'desktop'
+            className={`px-1.5 py-0.5 rounded text-[10px] font-medium transition-colors ${currentDevice === 'desktop'
               ? 'bg-blue-500 text-white'
               : 'bg-gray-200 dark:bg-gray-700 text-gray-700 dark:text-gray-300'
               }`}
           >
-            Desktop
+            D
           </button>
           <button
             onClick={() => setCurrentDevice('tablet')}
-            className={`px-2 py-0.5 rounded text-xs font-medium transition-colors ${currentDevice === 'tablet'
+            className={`px-1.5 py-0.5 rounded text-[10px] font-medium transition-colors ${currentDevice === 'tablet'
               ? 'bg-blue-500 text-white'
               : 'bg-gray-200 dark:bg-gray-700 text-gray-700 dark:text-gray-300'
               }`}
           >
-            Tablet
+            T
           </button>
           <button
             onClick={() => setCurrentDevice('mobile')}
-            className={`px-2 py-0.5 rounded text-xs font-medium transition-colors ${currentDevice === 'mobile'
+            className={`px-1.5 py-0.5 rounded text-[10px] font-medium transition-colors ${currentDevice === 'mobile'
               ? 'bg-blue-500 text-white'
               : 'bg-gray-200 dark:bg-gray-700 text-gray-700 dark:text-gray-300'
               }`}
           >
-            Mobile
+            M
           </button>
         </div>
       </div>
