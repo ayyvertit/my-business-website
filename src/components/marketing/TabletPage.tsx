@@ -74,7 +74,8 @@ export function TabletPage() {
           </div>
           <div className="max-w-5xl mx-auto px-6 text-center z-10">
             <motion.h1
-              className="font-serif text-7xl md:text-8xl lg:text-9xl font-black text-[var(--deep-tide)] dark:text-white mb-10 leading-none tracking-tight"
+              className="font-serif font-bold text-[var(--deep-tide)] dark:text-white mb-10"
+              style={{ fontSize: '6rem', lineHeight: '1.1' }}
               initial={{ opacity: 0, y: 40 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 1, ease: "easeOut" }}

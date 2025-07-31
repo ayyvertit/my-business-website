@@ -29,7 +29,7 @@ export function TabletHeader() {
           </div>
 
           {/* Logo */}
-          <div className="w-20 h-20 relative mt-1">
+          <div className="w-20 h-20 relative" style={{ marginTop: '6px' }}>
             <Image
               src="/logo.png"
               alt="Crystal Coast Concierge Logo"

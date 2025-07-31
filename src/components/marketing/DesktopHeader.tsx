@@ -28,7 +28,7 @@ export function DesktopHeader() {
           </div>
 
           {/* Logo - Much larger, almost touching top and bottom */}
-          <div className="w-28 h-28 relative mt-1">
+          <div className="w-28 h-28 relative" style={{ marginTop: '8px' }}>
             <Image
               src="/logo.png"
               alt="Crystal Coast Concierge Logo"

@@ -74,7 +74,8 @@ export function MobilePage() {
           </div>
           <div className="max-w-sm mx-auto px-4 text-center z-10">
             <motion.h1
-              className="font-serif text-4xl sm:text-5xl md:text-6xl font-black text-[var(--deep-tide)] dark:text-white mb-6 sm:mb-8 leading-none tracking-tight"
+              className="font-serif font-bold text-[var(--deep-tide)] dark:text-white mb-6 sm:mb-8"
+              style={{ fontSize: '4rem', lineHeight: '1.1' }}
               initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, ease: "easeOut" }}
