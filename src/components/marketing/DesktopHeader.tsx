@@ -30,7 +30,7 @@ export function DesktopHeader() {
           {/* Logo */}
           <div className="w-32 h-32 relative mt-1">
             <Image
-              src="/ChatGPT Image Jul 30, 2025, 10_31_47 PM.png"
+              src="/logo.png"
               alt="Crystal Coast Concierge Logo"
               width={128}
               height={128}
