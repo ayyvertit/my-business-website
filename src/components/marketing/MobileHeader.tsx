@@ -28,9 +28,9 @@ export function MobileHeader() {
       </div>
 
       <div className="max-w-full mx-auto px-3 sm:px-4">
-        <div className="flex justify-between items-center h-14 sm:h-16">
-          {/* Left side - Crystal Coast Concierge text */}
-          <div className="flex flex-col items-start text-[var(--deep-tide)] dark:text-white leading-none">
+        <div className="flex items-center h-14 sm:h-16 relative">
+          {/* Crystal Coast Concierge text - positioned on the left */}
+          <div className="absolute left-0 flex flex-col items-start text-[var(--deep-tide)] dark:text-white leading-none">
             <div style={{ position: 'relative' }}>
               <span className="text-sm sm:text-base font-bold tracking-wide break-words" style={{ letterSpacing: '0.05em' }}>CRYSTAL COAST</span>
             </div>
@@ -39,8 +39,8 @@ export function MobileHeader() {
             </div>
           </div>
           
-          {/* Center - Very Large Logo */}
-          <div className="flex-1 flex justify-center items-center">
+          {/* Center - Very Large Logo - truly centered in header */}
+          <div className="absolute left-1/2 transform -translate-x-1/2 flex justify-center items-center">
             <div className="w-13 h-13 sm:w-15 sm:h-15 relative">
               <Image
                 src="/logo.png"
@@ -52,8 +52,8 @@ export function MobileHeader() {
             </div>
           </div>
           
-          {/* Right side - Theme Toggle */}
-          <div className="flex items-center w-10 sm:w-12 justify-end">
+          {/* Theme Toggle - positioned on the right */}
+          <div className="absolute right-0 flex items-center">
             <ThemeToggle size="sm" />
           </div>
         </div>
