@@ -1,0 +1,5 @@
+[33m25fd2a8[m[33m ([m[1;36mHEAD[m[33m -> [m[1;32mmaster[m[33m, [m[1;31morigin/master[m[33m)[m Update desktop header with logo, gradient background, and improved styling
+[33mc1a47d5[m 🎯 Complete Site Update: Mobile optimizations + Remove custom cursor - Enhanced responsiveness for 320px-480px screens - Improved touch targets and spacing - Added custom breakpoints for very small screens - Optimized typography and container system - Completely removed custom mouse cursor - Better mobile-first design approach
+[33m2b43e92[m 🎯 Mobile Layout Optimization: Enhanced responsiveness for 320px-480px screens - Improved touch targets and spacing - Added custom breakpoints for very small screens - Optimized typography and container system - Better mobile-first design approach
+[33mc02545a[m Fix theme toggle button - remove animations and add baby blue background for testing
+[33m42a78d4[m Remove password protection - revert to public website
