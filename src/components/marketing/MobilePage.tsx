@@ -74,7 +74,7 @@ export function MobilePage() {
           </div>
           <div className="max-w-sm mx-auto px-4 text-center z-10">
             <motion.h1
-              className="font-serif text-6xl sm:text-7xl md:text-8xl font-black text-[var(--deep-tide)] dark:text-white mb-8 leading-none tracking-tight"
+              className="font-serif text-4xl sm:text-5xl md:text-6xl font-black text-[var(--deep-tide)] dark:text-white mb-6 sm:mb-8 leading-none tracking-tight"
               initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, ease: "easeOut" }}
@@ -82,7 +82,7 @@ export function MobilePage() {
               Relaxation, Delivered.
             </motion.h1>
             <motion.p
-              className="font-sans text-lg text-[var(--coastal-mist)] dark:text-[var(--ocean-foam)] mb-8"
+              className="font-sans text-base sm:text-lg text-[var(--coastal-mist)] dark:text-[var(--ocean-foam)] mb-6 sm:mb-8"
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.2, ease: "easeOut" }}
@@ -97,14 +97,14 @@ export function MobilePage() {
             >
               <motion.a
                 href="/booking"
-                className="inline-block bg-[var(--coral-blush)] text-white px-8 py-4 rounded-full shadow-md hover:shadow-lg transition-all duration-300 text-lg font-semibold"
+                className="inline-block bg-[var(--coral-blush)] text-white w-full max-w-[220px] mx-auto px-6 sm:px-8 py-4 rounded-full shadow-md hover:shadow-lg transition-all duration-300 text-base sm:text-lg font-semibold min-h-[48px] flex items-center justify-center"
                 whileTap={{ scale: 0.98 }}
               >
                 Book Now
               </motion.a>
               <motion.a
                 href="/services"
-                className="inline-block border-2 border-[var(--sea-glass)] text-[var(--sea-glass)] px-8 py-4 rounded-full hover:bg-[var(--sea-glass)] hover:text-white transition-all duration-300 text-lg font-semibold"
+                className="inline-block border-2 border-[var(--sea-glass)] text-[var(--sea-glass)] w-full max-w-[220px] mx-auto px-6 sm:px-8 py-4 rounded-full hover:bg-[var(--sea-glass)] hover:text-white transition-all duration-300 text-base sm:text-lg font-semibold min-h-[48px] flex items-center justify-center"
                 whileTap={{ scale: 0.98 }}
               >
                 View Services
@@ -114,10 +114,10 @@ export function MobilePage() {
         </section>
 
         {/* Services Section - Mobile List */}
-        <section className="bg-[var(--white-sand)] dark:bg-[var(--deep-tide)] py-16">
+        <section className="bg-[var(--white-sand)] dark:bg-[var(--deep-tide)] py-12 sm:py-16">
           <div className="max-w-sm mx-auto px-4 text-center">
             <motion.h2
-              className="font-serif text-3xl text-[var(--deep-tide)] dark:text-white mb-8"
+              className="font-serif text-2xl sm:text-3xl text-[var(--deep-tide)] dark:text-white mb-6 sm:mb-8"
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
@@ -135,15 +135,15 @@ export function MobilePage() {
               {services.map((service, index) => (
                 <motion.div
                   key={service.title}
-                  className="bg-white/80 dark:bg-white/10 backdrop-blur rounded-lg p-4 shadow-sm"
+                  className="bg-white/80 dark:bg-white/10 backdrop-blur rounded-lg p-4 sm:p-6 shadow-sm min-h-[48px]"
                   initial={{ opacity: 0, y: 20 }}
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true }}
                   transition={{ duration: 0.5, delay: index * 0.1 }}
                   whileTap={{ scale: 0.98 }}
                 >
-                  <h3 className="font-serif text-lg font-bold text-[var(--deep-tide)] dark:text-white mb-2">{service.title}</h3>
-                  <p className="font-sans text-sm text-[var(--coastal-mist)] leading-relaxed">{service.description}</p>
+                  <h3 className="font-serif text-base sm:text-lg font-bold text-[var(--deep-tide)] dark:text-white mb-2 sm:mb-3">{service.title}</h3>
+                  <p className="font-sans text-sm sm:text-base text-[var(--coastal-mist)] leading-relaxed">{service.description}</p>
                 </motion.div>
               ))}
             </motion.div>
@@ -151,10 +151,10 @@ export function MobilePage() {
         </section>
 
         {/* Testimonials Section - Mobile Layout */}
-        <section className="bg-[var(--ocean-foam)] dark:bg-[var(--deep-tide)] py-16">
+        <section className="bg-[var(--ocean-foam)] dark:bg-[var(--deep-tide)] py-12 sm:py-16">
           <div className="max-w-sm mx-auto px-4 text-center">
             <motion.h2
-              className="font-serif text-3xl text-[var(--deep-tide)] dark:text-white mb-8"
+              className="font-serif text-2xl sm:text-3xl text-[var(--deep-tide)] dark:text-white mb-6 sm:mb-8"
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
@@ -172,16 +172,16 @@ export function MobilePage() {
               {testimonials.map((testimonial, index) => (
                 <motion.blockquote
                   key={index}
-                  className="bg-white/80 dark:bg-white/10 backdrop-blur rounded-lg p-4 shadow-sm"
+                  className="bg-white/80 dark:bg-white/10 backdrop-blur rounded-lg p-4 sm:p-6 shadow-sm min-h-[48px]"
                   initial={{ opacity: 0, y: 20 }}
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true }}
                   transition={{ duration: 0.5, delay: index * 0.1 }}
                   whileTap={{ scale: 0.98 }}
                 >
-                  <Quote className="w-8 h-8 text-[var(--sea-glass)] mb-3 mx-auto" />
-                  <p className="font-sans italic text-sm text-[var(--deep-tide)] dark:text-white mb-3 leading-relaxed">&ldquo;{testimonial.quote}&rdquo;</p>
-                  <footer className="font-sans text-xs text-[var(--coastal-mist)]">
+                  <Quote className="w-6 h-6 sm:w-8 sm:h-8 text-[var(--sea-glass)] mb-3 mx-auto" />
+                  <p className="font-sans italic text-sm sm:text-base text-[var(--deep-tide)] dark:text-white mb-3 leading-relaxed">&ldquo;{testimonial.quote}&rdquo;</p>
+                  <footer className="font-sans text-xs sm:text-sm text-[var(--coastal-mist)]">
                     – {testimonial.author}, {testimonial.location}
                   </footer>
                 </motion.blockquote>
@@ -191,10 +191,10 @@ export function MobilePage() {
         </section>
 
         {/* Service Area Section - Mobile Layout */}
-        <section className="bg-[var(--white-sand)] dark:bg-[var(--deep-tide)] py-16">
+        <section className="bg-[var(--white-sand)] dark:bg-[var(--deep-tide)] py-12 sm:py-16">
           <div className="max-w-sm mx-auto px-4 text-center">
             <motion.h2
-              className="font-serif text-3xl text-[var(--deep-tide)] dark:text-white mb-4"
+              className="font-serif text-2xl sm:text-3xl text-[var(--deep-tide)] dark:text-white mb-4 sm:mb-6"
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
@@ -203,7 +203,7 @@ export function MobilePage() {
               Serving the Crystal Coast
             </motion.h2>
             <motion.p
-              className="font-sans text-base mb-6 text-[var(--coastal-mist)]"
+              className="font-sans text-sm sm:text-base mb-6 text-[var(--coastal-mist)]"
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
@@ -212,7 +212,7 @@ export function MobilePage() {
               We come to you—wherever you are in the region.
             </motion.p>
             <motion.div
-              className="grid grid-cols-2 gap-3"
+              className="grid grid-cols-1 sm:grid-cols-2 gap-3 sm:gap-4"
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
@@ -221,7 +221,7 @@ export function MobilePage() {
               {serviceAreas.map((area, index) => (
                 <motion.span
                   key={area}
-                  className="font-sans text-sm text-[var(--deep-tide)] dark:text-white p-2 bg-white/60 dark:bg-white/10 rounded-md"
+                  className="font-sans text-sm sm:text-base text-[var(--deep-tide)] dark:text-white p-3 sm:p-4 bg-white/60 dark:bg-white/10 rounded-md min-h-[48px] flex items-center justify-center"
                   initial={{ opacity: 0, scale: 0.9 }}
                   whileInView={{ opacity: 1, scale: 1 }}
                   viewport={{ once: true }}
@@ -236,10 +236,10 @@ export function MobilePage() {
         </section>
 
         {/* Booking Call-to-Action Section - Mobile Enhanced */}
-        <section className="relative bg-gradient-to-br from-[var(--sea-glass)] to-[var(--coral-blush)] py-16">
+        <section className="relative bg-gradient-to-br from-[var(--sea-glass)] to-[var(--coral-blush)] py-12 sm:py-16">
           <div className="max-w-sm mx-auto px-4 text-center text-white">
             <motion.h2
-              className="font-serif text-4xl font-bold mb-4"
+              className="font-serif text-3xl sm:text-4xl font-bold mb-4 sm:mb-6"
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
@@ -248,7 +248,7 @@ export function MobilePage() {
               Ready to feel your best?
             </motion.h2>
             <motion.p
-              className="font-sans text-base mb-6 leading-relaxed"
+              className="font-sans text-sm sm:text-base mb-6 leading-relaxed"
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
@@ -264,7 +264,7 @@ export function MobilePage() {
             >
               <motion.a
                 href="/booking"
-                className="inline-block bg-white text-[var(--sea-glass)] font-semibold px-6 py-4 rounded-full shadow-md hover:shadow-lg transition-all duration-300 text-base"
+                className="inline-block bg-white text-[var(--sea-glass)] font-semibold w-full max-w-[220px] mx-auto px-6 sm:px-8 py-4 rounded-full shadow-md hover:shadow-lg transition-all duration-300 text-base sm:text-lg min-h-[48px] flex items-center justify-center"
                 whileTap={{ scale: 0.98 }}
               >
                 Book Your Massage

@@ -62,17 +62,17 @@
   --bg: var(--background);
 
   /* Enhanced Typography System - Mobile-first with better small screen support */
-  --display-1: clamp(2.5rem, 6vw, 6rem);
+  --display-1: clamp(2rem, 5vw, 6rem);
   /* Reduced minimum for small screens */
-  --display-2: clamp(2rem, 5vw, 4.5rem);
-  --display-3: clamp(1.75rem, 4vw, 3.5rem);
-  --heading-1: clamp(1.5rem, 3.5vw, 2.75rem);
-  --heading-2: clamp(1.25rem, 3vw, 2.25rem);
-  --heading-3: clamp(1.125rem, 2.5vw, 1.875rem);
-  --body-large: clamp(1rem, 1.5vw, 1.25rem);
-  --body: clamp(0.875rem, 1.2vw, 1.125rem);
-  --body-small: clamp(0.75rem, 1vw, 1rem);
-  --caption: clamp(0.6875rem, 0.9vw, 0.875rem);
+  --display-2: clamp(1.75rem, 4vw, 4.5rem);
+  --display-3: clamp(1.5rem, 3.5vw, 3.5rem);
+  --heading-1: clamp(1.25rem, 3vw, 2.75rem);
+  --heading-2: clamp(1.125rem, 2.5vw, 2.25rem);
+  --heading-3: clamp(1rem, 2vw, 1.875rem);
+  --body-large: clamp(0.875rem, 1.2vw, 1.25rem);
+  --body: clamp(0.75rem, 1vw, 1.125rem);
+  --body-small: clamp(0.6875rem, 0.9vw, 1rem);
+  --caption: clamp(0.625rem, 0.8vw, 0.875rem);
 
   /* Whitespace Rhythm - Mobile-first with tighter spacing */
   --space-1: 0.25rem;
@@ -288,8 +288,8 @@ body {
 
 /* Section spacing - Mobile-first with tighter spacing */
 .section-padding {
-  padding-top: var(--space-16);
-  padding-bottom: var(--space-16);
+  padding-top: var(--space-12);
+  padding-bottom: var(--space-12);
 }
 
 @media (min-width: 640px) {
@@ -300,8 +300,8 @@ body {
 }
 
 .section-padding-sm {
-  padding-top: var(--space-12);
-  padding-bottom: var(--space-12);
+  padding-top: var(--space-8);
+  padding-bottom: var(--space-8);
 }
 
 @media (min-width: 640px) {
@@ -312,8 +312,8 @@ body {
 }
 
 .section-padding-lg {
-  padding-top: var(--space-20);
-  padding-bottom: var(--space-20);
+  padding-top: var(--space-16);
+  padding-bottom: var(--space-16);
 }
 
 @media (min-width: 640px) {
