@@ -27,13 +27,13 @@ export function DesktopHeader() {
             </div>
           </div>
 
-          {/* Logo */}
-          <div className="w-32 h-32 relative mt-1">
+          {/* Logo - Much larger, almost touching top and bottom */}
+          <div className="w-28 h-28 relative mt-1">
             <Image
               src="/logo.png"
               alt="Crystal Coast Concierge Logo"
-              width={128}
-              height={128}
+              width={112}
+              height={112}
               className="object-contain dark:filter dark:brightness-0 dark:invert transition-all duration-300 ease-in-out"
             />
           </div>
