@@ -26,7 +26,7 @@ export function DeviceSwitcher() {
 
     // Listen for window resize
     window.addEventListener('resize', detectDevice)
-    
+
     // Cleanup
     return () => window.removeEventListener('resize', detectDevice)
   }, [])
@@ -34,7 +34,7 @@ export function DeviceSwitcher() {
   return (
     <div className="min-h-screen">
       {/* Device Switcher Controls - Much smaller and repositioned */}
-      <div className="fixed top-2 right-6 z-[9998] bg-white/80 dark:bg-gray-800/80 backdrop-blur rounded-md p-1 shadow-sm border border-gray-200 dark:border-gray-600">
+      <div className="fixed top-2 right-12 z-[9998] bg-white/80 dark:bg-gray-800/80 backdrop-blur rounded-md p-1 shadow-sm border border-gray-200 dark:border-gray-600">
         <div className="flex gap-0.5">
           <button
             onClick={() => setCurrentDevice('desktop')}
