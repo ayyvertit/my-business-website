@@ -29,17 +29,24 @@ export function MobileHeader() {
 
       <div className="max-w-full mx-auto px-3 sm:px-4">
         <div className="flex justify-between items-center h-14 sm:h-16">
-          {/* Left side - empty for balance */}
-          <div className="w-10 sm:w-12"></div>
+          {/* Left side - Crystal Coast Concierge text */}
+          <div className="flex flex-col items-start text-[var(--deep-tide)] dark:text-white leading-none">
+            <div style={{ position: 'relative' }}>
+              <span className="text-sm sm:text-base font-bold tracking-wide break-words" style={{ letterSpacing: '0.05em' }}>CRYSTAL COAST</span>
+            </div>
+            <div style={{ position: 'relative', marginTop: '0px' }}>
+              <span className="text-xs sm:text-xs tracking-widest break-words" style={{ letterSpacing: '0.1em' }}>CONCIERGE</span>
+            </div>
+          </div>
           
           {/* Center - Large Logo */}
           <div className="flex-1 flex justify-center items-center">
-            <div className="w-10 h-10 sm:w-12 sm:h-12 relative">
+            <div className="w-12 h-12 sm:w-14 sm:h-14 relative">
               <Image
                 src="/logo.png"
                 alt="Crystal Coast Concierge Logo"
-                width={48}
-                height={48}
+                width={56}
+                height={56}
                 className="object-contain dark:filter dark:brightness-0 dark:invert transition-all duration-300 ease-in-out w-full h-full"
               />
             </div>
