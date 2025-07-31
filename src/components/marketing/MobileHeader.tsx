@@ -39,14 +39,14 @@ export function MobileHeader() {
             </div>
           </div>
           
-          {/* Center - Large Logo */}
+          {/* Center - Very Large Logo */}
           <div className="flex-1 flex justify-center items-center">
-            <div className="w-12 h-12 sm:w-14 sm:h-14 relative">
+            <div className="w-13 h-13 sm:w-15 sm:h-15 relative">
               <Image
                 src="/logo.png"
                 alt="Crystal Coast Concierge Logo"
-                width={56}
-                height={56}
+                width={60}
+                height={60}
                 className="object-contain dark:filter dark:brightness-0 dark:invert transition-all duration-300 ease-in-out w-full h-full"
               />
             </div>
