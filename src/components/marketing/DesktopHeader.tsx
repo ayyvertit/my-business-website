@@ -23,7 +23,7 @@ export function DesktopHeader() {
               <span style={{ fontSize: '24px', fontWeight: 'bold', letterSpacing: '0.05em' }}>CRYSTAL COAST</span>
             </div>
             <div style={{ position: 'relative', marginTop: '0px' }}>
-              <span style={{ fontSize: '14px', letterSpacing: '0.1em' }}>CONCIERGE</span>
+              <span className="tracking-widest break-words" style={{ fontSize: '24px', fontWeight: 'normal', letterSpacing: '0.1em' }}>CONCIERGE MASSAGE</span>
             </div>
           </div>
 

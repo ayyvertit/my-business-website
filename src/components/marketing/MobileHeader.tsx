@@ -35,10 +35,10 @@ export function MobileHeader() {
               <span className="text-sm sm:text-base font-bold tracking-wide break-words" style={{ letterSpacing: '0.05em' }}>CRYSTAL COAST</span>
             </div>
             <div style={{ position: 'relative', marginTop: '0px' }}>
-              <span className="text-xs sm:text-xs tracking-widest break-words" style={{ letterSpacing: '0.1em' }}>CONCIERGE</span>
+              <span className="text-xs sm:text-xs tracking-widest break-words" style={{ letterSpacing: '0.1em' }}>CONCIERGE MASSAGE</span>
             </div>
           </div>
-          
+
           {/* Center - Very Large Logo - truly centered in header */}
           <div className="absolute left-1/2 transform -translate-x-1/2 flex justify-center items-center">
             <div className="w-13 h-13 sm:w-15 sm:h-15 relative">
@@ -51,7 +51,7 @@ export function MobileHeader() {
               />
             </div>
           </div>
-          
+
           {/* Theme Toggle - positioned on the right */}
           <div className="absolute right-0 flex items-center">
             <ThemeToggle size="sm" />
