@@ -12,7 +12,7 @@ const testimonials = [
   {
     name: "Sarah M.",
     location: "Emerald Isle",
-    text: "Cameron's mobile massage service is incredible! She brought everything needed and created such a relaxing atmosphere. Perfect for our beach vacation.",
+    text: "Cameron's mobile massage service is incredible! He brought everything needed and created such a relaxing atmosphere. Perfect for our beach vacation.",
     rating: 5
   },
   {
