@@ -1,4 +1,4 @@
-import { Star } from 'lucide-react'
+
 import { DesktopHeader } from '../../components/marketing/DesktopHeader'
 import Footer from '../../components/Footer'
 

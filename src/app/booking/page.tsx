@@ -2,7 +2,7 @@
 
 import { useState } from "react"
 import { motion, AnimatePresence } from "framer-motion"
-import { Calendar, Clock, User, Mail, Phone, MessageSquare, CreditCard, CheckCircle } from 'lucide-react'
+import { Calendar, Clock, User, Mail, Phone, MessageSquare, CreditCard } from 'lucide-react'
 import { DesktopHeader } from '../../components/marketing/DesktopHeader'
 import Footer from '../../components/Footer'
 
@@ -104,11 +104,11 @@ export default function BookingPage() {
       if (stripe) {
         const { error } = await stripe.redirectToCheckout({ sessionId })
         if (error) {
-          console.error('Error:', error)
+          // Error occurred during checkout
         }
       }
     } catch (error) {
-      console.error('Error creating checkout session:', error)
+      // Error creating checkout session
     } finally {
       setIsLoading(false)
     }

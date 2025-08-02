@@ -1,7 +1,7 @@
 "use client"
 
 import { motion } from "framer-motion"
-import { Shield, Award, Heart, MapPin, User, GraduationCap, FileText } from 'lucide-react'
+import { Shield, Award, Heart, MapPin, GraduationCap, FileText } from 'lucide-react'
 import { DesktopHeader } from '../../components/marketing/DesktopHeader'
 import Footer from '../../components/Footer'
 
@@ -57,17 +57,17 @@ export default function AboutPage() {
               transition={{ duration: 0.8 }}
             >
               <h2 className="font-serif text-3xl font-bold text-[var(--deep-tide)] dark:text-white mb-8 text-center">
-                Cameron's Story
+                Cameron&apos;s Story
               </h2>
               <div className="prose prose-lg max-w-none text-[var(--coastal-mist)]">
                 <p className="text-lg leading-relaxed mb-6">
-                  With over 8 years of experience in therapeutic massage, I've dedicated my career to helping people find relief from stress, pain, and tension. My journey began with a deep appreciation for the healing power of touch and a desire to make wellness accessible to everyone.
+                  With over 8 years of experience in therapeutic massage, I&apos;ve dedicated my career to helping people find relief from stress, pain, and tension. My journey began with a deep appreciation for the healing power of touch and a desire to make wellness accessible to everyone.
                 </p>
                 <p className="text-lg leading-relaxed mb-6">
-                  After working in traditional spa settings, I realized that many people couldn't access quality massage therapy due to time constraints, mobility issues, or simply the inconvenience of traveling to a spa. This inspired me to create Crystal Coast Concierge Massage - bringing professional, therapeutic massage directly to your door.
+                  After working in traditional spa settings, I realized that many people couldn&apos;t access quality massage therapy due to time constraints, mobility issues, or simply the inconvenience of traveling to a spa. This inspired me to create Crystal Coast Concierge Massage - bringing professional, therapeutic massage directly to your door.
                 </p>
                 <p className="text-lg leading-relaxed">
-                  Whether you're a local resident, a vacationer enjoying the Crystal Coast, or someone seeking convenience without compromise, I'm here to provide you with a personalized massage experience in the comfort of your own space.
+                  Whether you&apos;re a local resident, a vacationer enjoying the Crystal Coast, or someone seeking convenience without compromise, I&apos;m here to provide you with a personalized massage experience in the comfort of your own space.
                 </p>
               </div>
             </motion.div>
