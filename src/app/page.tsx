@@ -1,7 +1,7 @@
 'use client'
 
-import { DeviceSwitcher } from "../components/marketing/DeviceSwitcher"
+import { DesktopPage } from "../components/marketing/DesktopPage"
 
 export default function Home() {
-  return <DeviceSwitcher />
+  return <DesktopPage />
 }
