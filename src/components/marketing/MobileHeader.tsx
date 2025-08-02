@@ -97,7 +97,7 @@ export function MobileHeader() {
             animate={{ opacity: 1, height: "auto" }}
             exit={{ opacity: 0, height: 0 }}
             transition={{ duration: 0.3, ease: "easeInOut" }}
-            className="bg-white/95 dark:bg-[var(--deep-tide)]/95 backdrop-blur border-t border-gray-200 dark:border-gray-700"
+            className="bg-[var(--white-sand)]/95 dark:bg-[var(--deep-tide)]/95 backdrop-blur border-t border-[var(--coastal-mist)] dark:border-[var(--ocean-foam)]"
           >
             <nav className="px-4 py-6">
               <div className="space-y-2">
@@ -106,7 +106,7 @@ export function MobileHeader() {
                     key={item.href}
                     href={item.href}
                     onClick={closeMenu}
-                    className="block w-full px-4 py-3 text-left text-[var(--deep-tide)] dark:text-white font-medium rounded-lg hover:bg-[var(--ocean-foam)] dark:hover:bg-white/10 transition-colors"
+                    className="block w-full px-4 py-3 text-left text-[var(--deep-tide)] dark:text-[var(--ocean-foam)] font-medium rounded-lg hover:bg-[var(--ocean-foam)] dark:hover:bg-white/20 transition-colors"
                     initial={{ opacity: 0, x: -20 }}
                     animate={{ opacity: 1, x: 0 }}
                     transition={{ duration: 0.3, delay: index * 0.05 }}
