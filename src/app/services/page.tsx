@@ -10,34 +10,38 @@ export default function ServicesPage() {
     {
       icon: "👐",
       title: "Swedish Massage",
-      description: "A gentle, relaxing full-body massage that eases stress and promotes circulation. Perfect for unwinding.",
+      description: "A smooth, flowing full-body massage designed to reduce stress, enhance circulation, and promote deep relaxation.",
       durations: ["60", "90", "120"],
       durationUnit: "minutes",
+      prices: ["$115", "$150", "$180"],
       featured: false
     },
     {
       icon: "💪",
       title: "Deep Tissue Massage",
-      description: "Targets deeper layers of muscle tension. Ideal for chronic pain, soreness, or post-activity recovery.",
+      description: "Focused, therapeutic work targeting deeper layers of muscle to relieve chronic tension, postural issues, and physical stress.",
       durations: ["60", "90", "120"],
       durationUnit: "minutes",
+      prices: ["$115", "$150", "$180"],
       featured: false
     },
     {
       icon: "🧘",
-      title: "Customized Massage",
-      description: "A blend of techniques based on your body's unique needs. Your session, your way.",
-      durations: ["All"],
-      durationUnit: "durations available",
+      title: "Custom Therapeutic Massage",
+      description: "A tailored blend of techniques adjusted to your unique needs — whether you're looking to unwind, recover, or focus on specific areas.",
+      durations: ["60", "90", "120"],
+      durationUnit: "minutes",
+      prices: ["$115", "$150", "$180"],
       featured: true
     },
     {
-      icon: "🏝️",
+      icon: "💑",
       title: "Couples Massage",
-      subtitle: "(Available On-Request)",
-      description: "Unwind together. Great for vacationers, retreats, or romantic getaways.",
-      durations: ["Booking"],
-      durationUnit: "requirements apply",
+      subtitle: "(Back-to-Back)",
+      description: "Two consecutive 60-minute sessions for you and your partner, friend, or family member — perfect for romantic getaways or shared self-care.",
+      durations: ["60 each"],
+      durationUnit: "minutes",
+      prices: ["$230 total"],
       featured: false
     }
   ]
@@ -94,13 +98,24 @@ export default function ServicesPage() {
                 transition={{ duration: 0.8, delay: 0.4 }}
               />
               <motion.p
-                className="text-xl sm:text-2xl text-[var(--deep-tide)] dark:text-[var(--ocean-foam)] max-w-3xl mx-auto"
+                className="text-xl sm:text-2xl text-[var(--deep-tide)] dark:text-[var(--ocean-foam)] max-w-3xl mx-auto mb-6"
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.8, delay: 0.6 }}
               >
                 Professional massage therapy brought directly to your door
               </motion.p>
+              <motion.div
+                className="bg-white/80 dark:bg-white/10 backdrop-blur rounded-lg p-4 max-w-2xl mx-auto"
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.8, delay: 0.8 }}
+              >
+                <p className="text-sm text-[var(--coastal-mist)] text-center">
+                  <strong className="text-[var(--deep-tide)] dark:text-white">All services</strong> are performed in the comfort of your home, Airbnb, or vacation rental. 
+                  <strong className="text-[var(--deep-tide)] dark:text-white"> Pricing includes travel</strong> within the Crystal Coast service area.
+                </p>
+              </motion.div>
             </motion.div>
           </div>
         </section>
@@ -150,18 +165,64 @@ export default function ServicesPage() {
                     {service.description}
                   </p>
 
-                  <div className="flex flex-wrap gap-2">
-                    {service.durations.map((duration, idx) => (
-                      <span
-                        key={idx}
-                        className="inline-block bg-[var(--sea-glass)] text-white px-3 py-1 rounded-full text-sm font-medium"
-                      >
-                        {duration} {service.durationUnit}
-                      </span>
-                    ))}
+                  <div className="space-y-3">
+                    <div className="flex flex-wrap gap-2">
+                      {service.durations.map((duration, idx) => (
+                        <span
+                          key={idx}
+                          className="inline-block bg-[var(--sea-glass)] text-white px-3 py-1 rounded-full text-sm font-medium"
+                        >
+                          {duration} {service.durationUnit}
+                        </span>
+                      ))}
+                    </div>
+                    <div className="flex flex-wrap gap-2">
+                      {service.prices.map((price, idx) => (
+                        <span
+                          key={idx}
+                          className="inline-block bg-[var(--coral-blush)] text-white px-3 py-1 rounded-full text-sm font-bold"
+                        >
+                          {price}
+                        </span>
+                      ))}
+                    </div>
                   </div>
                 </motion.div>
               ))}
+            </motion.div>
+          </div>
+        </section>
+
+        {/* Premium Upgrades Section */}
+        <section className="py-16 sm:py-24">
+          <div className="max-w-4xl mx-auto px-6 sm:px-8">
+            <motion.div
+              className="text-center mb-12"
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.8 }}
+            >
+              <h2 className="font-serif text-3xl sm:text-4xl font-bold text-[var(--deep-tide)] dark:text-white mb-4">
+                ✨ Coming Soon: Premium Upgrades
+              </h2>
+              <p className="text-lg text-[var(--coastal-mist)] max-w-2xl mx-auto">
+                Optional add-ons like hot towels, aromatherapy, and luxury enhancements will be available in the near future.
+              </p>
+            </motion.div>
+            
+            <motion.div
+              className="bg-gradient-to-r from-[var(--coral-blush)] to-[var(--sea-glass)] rounded-2xl p-8 text-white text-center"
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.8, delay: 0.2 }}
+            >
+              <div className="text-4xl mb-4">🌟</div>
+              <h3 className="font-serif text-2xl font-bold mb-4">Stay Tuned for Enhanced Experiences</h3>
+              <p className="text-lg opacity-90">
+                We're working on bringing you premium enhancements to make your massage experience even more luxurious and personalized.
+              </p>
             </motion.div>
           </div>
         </section>
