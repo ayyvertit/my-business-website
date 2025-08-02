@@ -1,8 +1,8 @@
 "use client"
 
+import { useState, useEffect } from "react"
 import { motion, AnimatePresence } from "framer-motion"
 import { Sun, Moon } from "lucide-react"
-import { useTheme } from "@/lib/hooks/useTheme"
 
 interface ThemeToggleProps {
   className?: string
@@ -10,7 +10,37 @@ interface ThemeToggleProps {
 }
 
 export function ThemeToggle({ className = "", size = "md" }: ThemeToggleProps) {
-  const { theme, mounted, toggleTheme } = useTheme()
+  const [theme, setTheme] = useState<"light" | "dark">("light")
+  const [mounted, setMounted] = useState(false)
+
+  useEffect(() => {
+    setMounted(true)
+
+    // Get initial theme
+    const getInitialTheme = (): "light" | "dark" => {
+      if (typeof window === "undefined") return "light"
+
+      try {
+        const stored = localStorage.getItem("theme") as "light" | "dark" | null
+        if (stored) return stored
+
+        return window.matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light"
+      } catch (e) {
+        return "light"
+      }
+    }
+
+    const initialTheme = getInitialTheme()
+    setTheme(initialTheme)
+    document.documentElement.classList.toggle("dark", initialTheme === "dark")
+  }, [])
+
+  const toggleTheme = () => {
+    const newTheme = theme === "light" ? "dark" : "light"
+    setTheme(newTheme)
+    localStorage.setItem("theme", newTheme)
+    document.documentElement.classList.toggle("dark", newTheme === "dark")
+  }
 
   // Don't render until mounted to prevent hydration mismatch
   if (!mounted) {

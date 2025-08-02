@@ -1,12 +1,50 @@
 "use client"
 
-import { useTheme } from "@/lib/hooks/useTheme"
+import { useState, useEffect } from "react"
 import { ThemeToggle } from "@/components/ui/ThemeToggle"
 import { ResponsiveHeader } from "@/components/marketing/ResponsiveHeader"
 import { Footer } from "@/components/marketing/Footer"
 
 export default function TestThemePage() {
-  const { theme, mounted, toggleTheme, setTheme, isDark, isLight } = useTheme()
+  const [theme, setTheme] = useState<"light" | "dark">("light")
+  const [mounted, setMounted] = useState(false)
+
+  useEffect(() => {
+    setMounted(true)
+
+    const getInitialTheme = (): "light" | "dark" => {
+      if (typeof window === "undefined") return "light"
+
+      try {
+        const stored = localStorage.getItem("theme") as "light" | "dark" | null
+        if (stored) return stored
+
+        return window.matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light"
+      } catch (e) {
+        return "light"
+      }
+    }
+
+    const initialTheme = getInitialTheme()
+    setTheme(initialTheme)
+  }, [])
+
+  const toggleTheme = () => {
+    const newTheme = theme === "light" ? "dark" : "light"
+    setTheme(newTheme)
+    localStorage.setItem("theme", newTheme)
+    document.documentElement.classList.toggle("dark", newTheme === "dark")
+  }
+
+  const setThemeMode = (newTheme: "light" | "dark") => {
+    setTheme(newTheme)
+    localStorage.setItem("theme", newTheme)
+    document.documentElement.classList.toggle("dark", newTheme === "dark")
+  }
+
+  if (!mounted) {
+    return <div>Loading...</div>
+  }
 
   return (
     <>
@@ -14,7 +52,7 @@ export default function TestThemePage() {
       <main className="min-h-screen bg-[var(--background)] text-[var(--foreground)] p-8">
         <div className="max-w-4xl mx-auto">
           <h1 className="text-4xl font-bold mb-8">Theme Testing Page</h1>
-          
+
           <div className="grid gap-8">
             {/* Theme Status */}
             <section className="bg-[var(--card)] p-6 rounded-lg shadow-lg">
@@ -22,8 +60,8 @@ export default function TestThemePage() {
               <div className="space-y-2">
                 <p><strong>Current Theme:</strong> {theme}</p>
                 <p><strong>Mounted:</strong> {mounted ? "Yes" : "No"}</p>
-                <p><strong>Is Dark:</strong> {isDark ? "Yes" : "No"}</p>
-                <p><strong>Is Light:</strong> {isLight ? "Yes" : "No"}</p>
+                <p><strong>Is Dark:</strong> {theme === "dark" ? "Yes" : "No"}</p>
+                <p><strong>Is Light:</strong> {theme === "light" ? "Yes" : "No"}</p>
               </div>
             </section>
 
@@ -39,13 +77,13 @@ export default function TestThemePage() {
                   Toggle Theme
                 </button>
                 <button
-                  onClick={() => setTheme("light")}
+                  onClick={() => setThemeMode("light")}
                   className="px-4 py-2 bg-blue-500 text-white rounded-lg hover:bg-blue-600 transition-colors"
                 >
                   Force Light
                 </button>
                 <button
-                  onClick={() => setTheme("dark")}
+                  onClick={() => setThemeMode("dark")}
                   className="px-4 py-2 bg-gray-800 text-white rounded-lg hover:bg-gray-900 transition-colors"
                 >
                   Force Dark
@@ -80,7 +118,7 @@ export default function TestThemePage() {
             <section className="bg-[var(--card)] p-6 rounded-lg shadow-lg">
               <h2 className="text-2xl font-semibold mb-4">Cross-tab Test</h2>
               <p className="mb-4">
-                Open this page in multiple tabs and change the theme in one tab. 
+                Open this page in multiple tabs and change the theme in one tab.
                 The theme should sync across all tabs automatically.
               </p>
               <div className="bg-yellow-100 dark:bg-yellow-900 p-4 rounded-lg">
@@ -100,7 +138,7 @@ export default function TestThemePage() {
             <section className="bg-[var(--card)] p-6 rounded-lg shadow-lg">
               <h2 className="text-2xl font-semibold mb-4">System Theme Test</h2>
               <p className="mb-4">
-                Change your system theme (light/dark mode) and see if the website 
+                Change your system theme (light/dark mode) and see if the website
                 automatically follows it (when no theme is manually set).
               </p>
               <div className="bg-blue-100 dark:bg-blue-900 p-4 rounded-lg">
