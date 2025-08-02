@@ -16,7 +16,12 @@ export function TabletHeader() {
         left: '16px',
         zIndex: 9999
       }}>
-        <div className="flex items-start gap-2">
+        <motion.a
+          href="/"
+          className="flex items-start gap-2 cursor-pointer hover:opacity-80 transition-opacity duration-300"
+          whileHover={{ scale: 1.02 }}
+          whileTap={{ scale: 0.98 }}
+        >
           {/* Text */}
           <div className="flex flex-col items-start text-[var(--deep-tide)] dark:text-white leading-none">
             <div style={{ position: 'relative' }}>
@@ -37,7 +42,7 @@ export function TabletHeader() {
               className="object-contain dark:filter dark:brightness-0 dark:invert transition-all duration-300 ease-in-out"
             />
           </div>
-        </div>
+        </motion.a>
       </div>
 
       <div className="max-w-6xl mx-auto px-6">

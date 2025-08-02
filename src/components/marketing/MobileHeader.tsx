@@ -32,17 +32,27 @@ export function MobileHeader() {
       <div className="max-w-full mx-auto px-3 sm:px-4">
         <div className="flex items-center h-14 sm:h-16 relative">
           {/* Crystal Coast Concierge text - positioned on the left */}
-          <div className="absolute left-0 flex flex-col items-start text-[var(--deep-tide)] dark:text-white leading-none">
+          <motion.a
+            href="/"
+            className="absolute left-0 flex flex-col items-start text-[var(--deep-tide)] dark:text-white leading-none cursor-pointer hover:opacity-80 transition-opacity duration-300"
+            whileHover={{ scale: 1.02 }}
+            whileTap={{ scale: 0.98 }}
+          >
             <div style={{ position: 'relative' }}>
               <span className="text-sm sm:text-base font-bold tracking-wide break-words" style={{ letterSpacing: '0.05em' }}>CRYSTAL COAST</span>
             </div>
             <div style={{ position: 'relative', marginTop: '0px' }}>
               <span className="text-xs sm:text-xs tracking-widest break-words" style={{ letterSpacing: '0.1em' }}>CONCIERGE MASSAGE</span>
             </div>
-          </div>
+          </motion.a>
 
           {/* Center - Very Large Logo - truly centered in header */}
-          <div className="absolute left-1/2 transform -translate-x-1/2 flex justify-center items-center">
+          <motion.a
+            href="/"
+            className="absolute left-1/2 transform -translate-x-1/2 flex justify-center items-center cursor-pointer hover:opacity-80 transition-opacity duration-300"
+            whileHover={{ scale: 1.02 }}
+            whileTap={{ scale: 0.98 }}
+          >
             <div className="w-13 h-13 sm:w-15 sm:h-15 relative">
               <Image
                 src="/logo.png"
@@ -52,7 +62,7 @@ export function MobileHeader() {
                 className="object-contain dark:filter dark:brightness-0 dark:invert transition-all duration-300 ease-in-out w-full h-full"
               />
             </div>
-          </div>
+          </motion.a>
 
           {/* Right side - Menu button and Theme Toggle */}
           <div className="absolute right-0 flex items-center gap-2">

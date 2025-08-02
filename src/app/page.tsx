@@ -72,7 +72,7 @@ const services = [
 export default function Home() {
   return (
     <>
-             <ResponsiveHeader />
+      <ResponsiveHeader />
       <main id="main-content" role="main" className="min-h-screen">
         {/* Hero Section - Desktop Optimized */}
         <section className="relative h-screen bg-[var(--ocean-foam)] dark:bg-[var(--deep-tide)] flex items-center justify-center text-center overflow-hidden">
@@ -80,7 +80,12 @@ export default function Home() {
           <div className="relative z-10 max-w-6xl mx-auto px-6 sm:px-8">
             <motion.h1
               className="font-serif font-bold text-[var(--deep-tide)] dark:text-white mb-8 text-center"
-              style={{ fontSize: '8rem', lineHeight: '1.1' }}
+              style={{
+                fontSize: 'clamp(3rem, 8vw, 8rem)',
+                lineHeight: '1.1',
+                wordWrap: 'break-word',
+                overflowWrap: 'break-word'
+              }}
               initial={{ opacity: 0, y: 50 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 1.2, ease: "easeOut" }}
@@ -289,7 +294,7 @@ export default function Home() {
                     </div>
                   </div>
                   <p className="text-[var(--coastal-mist)] mb-6 leading-relaxed italic">
-                                         &ldquo;{testimonial.text}&rdquo;
+                    &ldquo;{testimonial.text}&rdquo;
                   </p>
                   <div className="flex items-center justify-between">
                     <div>
