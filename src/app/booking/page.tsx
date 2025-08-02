@@ -38,15 +38,16 @@ export default function BookingPage() {
   const [isLoading, setIsLoading] = useState(false)
 
   const massageTypes = [
-    { value: 'swedish', label: 'Swedish Massage', description: 'Gentle, relaxing full-body massage' },
-    { value: 'deep-tissue', label: 'Deep Tissue Massage', description: 'Targets deeper muscle layers' },
-    { value: 'customized', label: 'Customized Massage', description: 'Blend of techniques for your needs' }
+    { value: 'swedish', label: 'Swedish Massage', description: 'A smooth, flowing full-body massage designed to reduce stress, enhance circulation, and promote deep relaxation.' },
+    { value: 'deep-tissue', label: 'Deep Tissue Massage', description: 'Focused, therapeutic work targeting deeper layers of muscle to relieve chronic tension, postural issues, and physical stress.' },
+    { value: 'custom-therapeutic', label: 'Custom Therapeutic Massage', description: 'A tailored blend of techniques adjusted to your unique needs — whether you\'re looking to unwind, recover, or focus on specific areas.' },
+    { value: 'couples', label: 'Couples Massage', description: 'Two consecutive 60-minute sessions for you and your partner, friend, or family member — perfect for romantic getaways or shared self-care.' }
   ]
 
   const durations = [
-    { value: '60', label: '60 minutes', price: 80 },
-    { value: '90', label: '90 minutes', price: 110 },
-    { value: '120', label: '120 minutes', price: 140 }
+    { value: '60', label: '60 minutes', price: 115 },
+    { value: '90', label: '90 minutes', price: 150 },
+    { value: '120', label: '120 minutes', price: 180 }
   ]
 
   const timeSlots = [
@@ -56,9 +57,10 @@ export default function BookingPage() {
   ]
 
   const pricing: Pricing = {
-    swedish: { '60': 80, '90': 110, '120': 140 },
-    'deep-tissue': { '60': 90, '90': 125, '120': 160 },
-    customized: { '60': 85, '90': 120, '120': 150 }
+    swedish: { '60': 115, '90': 150, '120': 180 },
+    'deep-tissue': { '60': 115, '90': 150, '120': 180 },
+    'custom-therapeutic': { '60': 115, '90': 150, '120': 180 },
+    couples: { '60': 230, '90': 230, '120': 230 }
   }
 
   const getCurrentPrice = () => {

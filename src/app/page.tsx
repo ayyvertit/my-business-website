@@ -45,27 +45,27 @@ const serviceAreas = [
 const services = [
   {
     title: "Swedish Massage",
-    description: "Classic relaxation massage using long, flowing strokes to release muscle tension and promote circulation.",
-    duration: "60-90 minutes",
-    price: "$80-110"
+    description: "A smooth, flowing full-body massage designed to reduce stress, enhance circulation, and promote deep relaxation.",
+    duration: "60-120 minutes",
+    price: "$115-180"
   },
   {
     title: "Deep Tissue Massage",
-    description: "Targeted therapy for chronic muscle tension and pain relief using deeper pressure techniques.",
-    duration: "60-90 minutes",
-    price: "$90-120"
+    description: "Focused, therapeutic work targeting deeper layers of muscle to relieve chronic tension, postural issues, and physical stress.",
+    duration: "60-120 minutes",
+    price: "$115-180"
   },
   {
-    title: "Customized Massage",
-    description: "Tailored session combining various techniques to address your specific needs and preferences.",
-    duration: "60-90 minutes",
-    price: "$85-115"
+    title: "Custom Therapeutic Massage",
+    description: "A tailored blend of techniques adjusted to your unique needs — whether you're looking to unwind, recover, or focus on specific areas.",
+    duration: "60-120 minutes",
+    price: "$115-180"
   },
   {
     title: "Couples Massage",
-    description: "Relaxing side-by-side massage experience perfect for romantic getaways or special occasions.",
-    duration: "60-90 minutes",
-    price: "$150-200"
+    description: "Two consecutive 60-minute sessions for you and your partner, friend, or family member — perfect for romantic getaways or shared self-care.",
+    duration: "60 minutes each",
+    price: "$230 total"
   }
 ]
 

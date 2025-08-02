@@ -9,8 +9,8 @@ const services = [
   {
     name: "Swedish Massage",
     duration: "60 min",
-    price: "$90",
-    description: "Classic relaxation massage with long, flowing strokes",
+    price: "$115",
+    description: "A smooth, flowing full-body massage designed to reduce stress, enhance circulation, and promote deep relaxation.",
     features: [
       "Full body massage",
       "Stress relief",
@@ -20,10 +20,10 @@ const services = [
     popular: false
   },
   {
-    name: "Therapeutic Massage",
+    name: "Deep Tissue Massage",
     duration: "60 min",
-    price: "$100",
-    description: "Deep tissue work for chronic pain and muscle issues",
+    price: "$115",
+    description: "Focused, therapeutic work targeting deeper layers of muscle to relieve chronic tension, postural issues, and physical stress.",
     features: [
       "Deep tissue techniques",
       "Pain management",
@@ -35,7 +35,7 @@ const services = [
   {
     name: "Swedish Massage",
     duration: "90 min",
-    price: "$115",
+    price: "$150",
     description: "Extended session for complete relaxation and recovery",
     features: [
       "Extended full body",
@@ -46,9 +46,9 @@ const services = [
     popular: false
   },
   {
-    name: "Therapeutic Massage",
+    name: "Deep Tissue Massage",
     duration: "90 min",
-    price: "$125",
+    price: "$150",
     description: "Comprehensive deep tissue session for serious issues",
     features: [
       "Extended deep tissue",
@@ -59,15 +59,15 @@ const services = [
     popular: false
   },
   {
-    name: "TMJ/MediCupping",
-    duration: "30 min",
-    price: "$55",
-    description: "Specialized treatment for jaw tension and cupping therapy",
+    name: "Custom Therapeutic",
+    duration: "60 min",
+    price: "$115",
+    description: "A tailored blend of techniques adjusted to your unique needs — whether you're looking to unwind, recover, or focus on specific areas.",
     features: [
-      "TMJ relief",
-      "Cupping therapy",
-      "Facial tension release",
-      "Targeted treatment"
+      "Personalized approach",
+      "Technique blending",
+      "Targeted treatment",
+      "Flexible focus"
     ],
     popular: false
   }

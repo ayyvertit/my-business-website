@@ -25,44 +25,30 @@ export const SERVICES = [
     {
         id: "swedish",
         title: "Swedish Massage",
-        description: "A gentle, full-body massage to ease stress and promote relaxation.",
-        duration: "60-90 minutes",
-        price: "$120-180"
+        description: "A smooth, flowing full-body massage designed to reduce stress, enhance circulation, and promote deep relaxation.",
+        duration: "60-120 minutes",
+        price: "$115-180"
     },
     {
-        id: "therapeutic",
-        title: "Therapeutic Massage",
-        description: "Deep tissue work for chronic pain and muscle tension relief.",
-        duration: "60-90 minutes",
-        price: "$140-200"
+        id: "deep-tissue",
+        title: "Deep Tissue Massage",
+        description: "Focused, therapeutic work targeting deeper layers of muscle to relieve chronic tension, postural issues, and physical stress.",
+        duration: "60-120 minutes",
+        price: "$115-180"
     },
     {
-        id: "tmj-cupping",
-        title: "TMJ/MediCupping",
-        description: "Specialized treatment for jaw tension and cupping therapy.",
-        duration: "45-60 minutes",
-        price: "$100-140"
+        id: "custom-therapeutic",
+        title: "Custom Therapeutic Massage",
+        description: "A tailored blend of techniques adjusted to your unique needs — whether you're looking to unwind, recover, or focus on specific areas.",
+        duration: "60-120 minutes",
+        price: "$115-180"
     },
     {
-        id: "hot-stone",
-        title: "Hot Stone Massage",
-        description: "Heated stones for deep muscle relaxation and stress relief.",
-        duration: "75-90 minutes",
-        price: "$160-220"
-    },
-    {
-        id: "aromatherapy",
-        title: "Aromatherapy Massage",
-        description: "Essential oils enhance the therapeutic benefits of massage.",
-        duration: "60-75 minutes",
-        price: "$130-190"
-    },
-    {
-        id: "sports",
-        title: "Sports Massage",
-        description: "Targeted techniques for athletes and active individuals.",
-        duration: "45-75 minutes",
-        price: "$110-170"
+        id: "couples",
+        title: "Couples Massage",
+        description: "Two consecutive 60-minute sessions for you and your partner, friend, or family member — perfect for romantic getaways or shared self-care.",
+        duration: "60 minutes each",
+        price: "$230 total"
     }
 ] as const
 

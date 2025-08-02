@@ -144,9 +144,10 @@ export default function ContactForm() {
               className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-teal-500 focus:border-transparent transition-colors"
             >
               <option value="">Select a service</option>
-              <option value="swedish">Swedish Massage ($120)</option>
-              <option value="deep-tissue">Deep Tissue ($140)</option>
-              <option value="hot-stone">Hot Stone ($160)</option>
+              <option value="swedish">Swedish Massage ($115-180)</option>
+              <option value="deep-tissue">Deep Tissue Massage ($115-180)</option>
+              <option value="custom-therapeutic">Custom Therapeutic ($115-180)</option>
+              <option value="couples">Couples Massage ($230 total)</option>
             </select>
           </div>
         </div>

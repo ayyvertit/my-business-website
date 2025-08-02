@@ -59,19 +59,19 @@ export default function Footer() {
               </li>
               <li className="flex items-center space-x-2 group">
                 <div className="w-2 h-2 bg-teal-400 rounded-full group-hover:scale-150 transition-transform duration-300"></div>
-                <span className="group-hover:text-white transition-colors duration-300">Deep Tissue</span>
+                <span className="group-hover:text-white transition-colors duration-300">Deep Tissue Massage</span>
               </li>
               <li className="flex items-center space-x-2 group">
                 <div className="w-2 h-2 bg-teal-400 rounded-full group-hover:scale-150 transition-transform duration-300"></div>
-                <span className="group-hover:text-white transition-colors duration-300">Hot Stone</span>
+                <span className="group-hover:text-white transition-colors duration-300">Custom Therapeutic</span>
               </li>
               <li className="flex items-center space-x-2 group">
                 <div className="w-2 h-2 bg-teal-400 rounded-full group-hover:scale-150 transition-transform duration-300"></div>
-                <span className="group-hover:text-white transition-colors duration-300">Concierge Service</span>
+                <span className="group-hover:text-white transition-colors duration-300">Couples Massage</span>
               </li>
               <li className="flex items-center space-x-2 group">
                 <div className="w-2 h-2 bg-teal-400 rounded-full group-hover:scale-150 transition-transform duration-300"></div>
-                <span className="group-hover:text-white transition-colors duration-300">In-Home Delivery</span>
+                <span className="group-hover:text-white transition-colors duration-300">Mobile Service</span>
               </li>
             </ul>
           </div>

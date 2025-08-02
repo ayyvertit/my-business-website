@@ -40,7 +40,7 @@ export default function ConfirmationPage() {
                     preferredDate: "2024-02-15",
                     preferredTime: "2:00 PM",
                     additionalNotes: "Please bring extra towels",
-                    amount: 110
+                    amount: 150
                 })
                 setLoading(false)
             }, 1000)
