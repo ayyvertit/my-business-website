@@ -71,7 +71,7 @@ export default function ServicesPage() {
 
   return (
     <>
-             <ResponsiveHeader />
+      <ResponsiveHeader />
       <main className="min-h-screen bg-[var(--white-sand)] dark:bg-[var(--deep-tide)]">
 
         {/* Hero Section */}
@@ -112,7 +112,7 @@ export default function ServicesPage() {
                 transition={{ duration: 0.8, delay: 0.8 }}
               >
                 <p className="text-sm text-[var(--coastal-mist)] text-center">
-                  <strong className="text-[var(--deep-tide)] dark:text-white">All services</strong> are performed in the comfort of your home, Airbnb, or vacation rental. 
+                  <strong className="text-[var(--deep-tide)] dark:text-white">All services</strong> are performed in the comfort of your home, Airbnb, or vacation rental.
                   <strong className="text-[var(--deep-tide)] dark:text-white"> Pricing includes travel</strong> within the Crystal Coast service area.
                 </p>
               </motion.div>
@@ -210,7 +210,7 @@ export default function ServicesPage() {
                 Optional add-ons like hot towels, aromatherapy, and luxury enhancements will be available in the near future.
               </p>
             </motion.div>
-            
+
             <motion.div
               className="bg-gradient-to-r from-[var(--coral-blush)] to-[var(--sea-glass)] rounded-2xl p-8 text-white text-center"
               initial={{ opacity: 0, y: 30 }}

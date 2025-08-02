@@ -127,7 +127,7 @@ export default function BookingPage() {
 
   return (
     <>
-             <ResponsiveHeader />
+      <ResponsiveHeader />
       <main className="min-h-screen bg-[var(--white-sand)] dark:bg-[var(--deep-tide)]">
 
         {/* Hero Section */}
