@@ -9,7 +9,6 @@ export function TabletHeader() {
   return (
     <header className="sticky top-0 z-50 bg-gradient-to-r from-[#F7B6A6] to-white dark:from-[var(--deep-tide)] dark:to-[var(--deep-tide)]/90 backdrop-blur supports-backdrop-blur:blur-md shadow-md relative">
 
-
       {/* Crystal Coast Concierge - Fixed positioned in top-left */}
       <div style={{
         position: 'fixed',
@@ -43,12 +42,12 @@ export function TabletHeader() {
 
       <div className="max-w-6xl mx-auto px-6">
         <div className="flex items-center justify-center h-24">
-          {/* Navigation Links - Center */}
-          <div className="flex gap-4">
+          {/* Navigation Links - Center with all tabs */}
+          <div className="flex gap-3 flex-wrap justify-center">
             <motion.a
               href="/"
               style={{
-                padding: '10px 20px',
+                padding: '8px 16px',
                 backgroundColor: '#7FCAC5',
                 color: 'white',
                 fontWeight: '600',
@@ -58,7 +57,8 @@ export function TabletHeader() {
                 textAlign: 'center',
                 position: 'relative',
                 overflow: 'hidden',
-                transition: 'all 0.3s ease'
+                transition: 'all 0.3s ease',
+                fontSize: '14px'
               }}
               onMouseEnter={(e) => {
                 e.currentTarget.style.backgroundColor = '#F7B6A6';
@@ -73,9 +73,9 @@ export function TabletHeader() {
               Home
             </motion.a>
             <motion.a
-              href="/services"
+              href="/about"
               style={{
-                padding: '10px 20px',
+                padding: '8px 16px',
                 backgroundColor: '#7FCAC5',
                 color: 'white',
                 fontWeight: '600',
@@ -85,7 +85,36 @@ export function TabletHeader() {
                 textAlign: 'center',
                 position: 'relative',
                 overflow: 'hidden',
-                transition: 'all 0.3s ease'
+                transition: 'all 0.3s ease',
+                fontSize: '14px'
+              }}
+              onMouseEnter={(e) => {
+                e.currentTarget.style.backgroundColor = '#F7B6A6';
+                e.currentTarget.style.boxShadow = '0 16px 20px -5px rgba(0, 0, 0, 0.1)';
+              }}
+              onMouseLeave={(e) => {
+                e.currentTarget.style.backgroundColor = '#7FCAC5';
+                e.currentTarget.style.boxShadow = '0 8px 12px -3px rgba(0, 0, 0, 0.1)';
+              }}
+              whileHover={{ y: -2, scale: 1.03 }}
+            >
+              About
+            </motion.a>
+            <motion.a
+              href="/services"
+              style={{
+                padding: '8px 16px',
+                backgroundColor: '#7FCAC5',
+                color: 'white',
+                fontWeight: '600',
+                borderRadius: '9999px',
+                boxShadow: '0 8px 12px -3px rgba(0, 0, 0, 0.1)',
+                textDecoration: 'none',
+                textAlign: 'center',
+                position: 'relative',
+                overflow: 'hidden',
+                transition: 'all 0.3s ease',
+                fontSize: '14px'
               }}
               onMouseEnter={(e) => {
                 e.currentTarget.style.backgroundColor = '#F7B6A6';
@@ -100,9 +129,9 @@ export function TabletHeader() {
               Services
             </motion.a>
             <motion.a
-              href="/booking"
+              href="/service-area"
               style={{
-                padding: '10px 20px',
+                padding: '8px 16px',
                 backgroundColor: '#7FCAC5',
                 color: 'white',
                 fontWeight: '600',
@@ -112,7 +141,36 @@ export function TabletHeader() {
                 textAlign: 'center',
                 position: 'relative',
                 overflow: 'hidden',
-                transition: 'all 0.3s ease'
+                transition: 'all 0.3s ease',
+                fontSize: '14px'
+              }}
+              onMouseEnter={(e) => {
+                e.currentTarget.style.backgroundColor = '#F7B6A6';
+                e.currentTarget.style.boxShadow = '0 16px 20px -5px rgba(0, 0, 0, 0.1)';
+              }}
+              onMouseLeave={(e) => {
+                e.currentTarget.style.backgroundColor = '#7FCAC5';
+                e.currentTarget.style.boxShadow = '0 8px 12px -3px rgba(0, 0, 0, 0.1)';
+              }}
+              whileHover={{ y: -2, scale: 1.03 }}
+            >
+              Service Area
+            </motion.a>
+            <motion.a
+              href="/booking"
+              style={{
+                padding: '8px 16px',
+                backgroundColor: '#7FCAC5',
+                color: 'white',
+                fontWeight: '600',
+                borderRadius: '9999px',
+                boxShadow: '0 8px 12px -3px rgba(0, 0, 0, 0.1)',
+                textDecoration: 'none',
+                textAlign: 'center',
+                position: 'relative',
+                overflow: 'hidden',
+                transition: 'all 0.3s ease',
+                fontSize: '14px'
               }}
               onMouseEnter={(e) => {
                 e.currentTarget.style.backgroundColor = '#F7B6A6';
@@ -127,9 +185,9 @@ export function TabletHeader() {
               Book
             </motion.a>
             <motion.a
-              href="/about"
+              href="/testimonials"
               style={{
-                padding: '10px 20px',
+                padding: '8px 16px',
                 backgroundColor: '#7FCAC5',
                 color: 'white',
                 fontWeight: '600',
@@ -139,7 +197,8 @@ export function TabletHeader() {
                 textAlign: 'center',
                 position: 'relative',
                 overflow: 'hidden',
-                transition: 'all 0.3s ease'
+                transition: 'all 0.3s ease',
+                fontSize: '14px'
               }}
               onMouseEnter={(e) => {
                 e.currentTarget.style.backgroundColor = '#F7B6A6';
@@ -151,7 +210,7 @@ export function TabletHeader() {
               }}
               whileHover={{ y: -2, scale: 1.03 }}
             >
-              About
+              Reviews
             </motion.a>
           </div>
         </div>

@@ -1,12 +1,29 @@
 "use client"
 
 import { useState, useEffect } from "react"
+import { usePathname } from "next/navigation"
 import { DesktopPage } from "./DesktopPage"
 import { TabletPage } from "./TabletPage"
 import { MobilePage } from "./MobilePage"
+import { DesktopAbout } from "./DesktopAbout"
+import { TabletAbout } from "./TabletAbout"
+import { MobileAbout } from "./MobileAbout"
+import { DesktopServices } from "./DesktopServices"
+import { TabletServices } from "./TabletServices"
+import { MobileServices } from "./MobileServices"
+import { DesktopServiceArea } from "./DesktopServiceArea"
+import { TabletServiceArea } from "./TabletServiceArea"
+import { MobileServiceArea } from "./MobileServiceArea"
+import { DesktopBooking } from "./DesktopBooking"
+import { TabletBooking } from "./TabletBooking"
+import { MobileBooking } from "./MobileBooking"
+import { DesktopTestimonials } from "./DesktopTestimonials"
+import { TabletTestimonials } from "./TabletTestimonials"
+import { MobileTestimonials } from "./MobileTestimonials"
 
 export function DeviceSwitcher() {
   const [currentDevice, setCurrentDevice] = useState<'desktop' | 'tablet' | 'mobile'>('desktop')
+  const pathname = usePathname()
 
   // Auto-detect device on mount and window resize
   useEffect(() => {
@@ -30,6 +47,61 @@ export function DeviceSwitcher() {
     // Cleanup
     return () => window.removeEventListener('resize', detectDevice)
   }, [])
+
+  // Determine which component to render based on pathname and device
+  const renderContent = () => {
+    switch (pathname) {
+      case '/':
+        switch (currentDevice) {
+          case 'desktop': return <DesktopPage />
+          case 'tablet': return <TabletPage />
+          case 'mobile': return <MobilePage />
+        }
+        break
+      case '/about':
+        switch (currentDevice) {
+          case 'desktop': return <DesktopAbout />
+          case 'tablet': return <TabletAbout />
+          case 'mobile': return <MobileAbout />
+        }
+        break
+      case '/services':
+        switch (currentDevice) {
+          case 'desktop': return <DesktopServices />
+          case 'tablet': return <TabletServices />
+          case 'mobile': return <MobileServices />
+        }
+        break
+      case '/service-area':
+        switch (currentDevice) {
+          case 'desktop': return <DesktopServiceArea />
+          case 'tablet': return <TabletServiceArea />
+          case 'mobile': return <MobileServiceArea />
+        }
+        break
+      case '/booking':
+        switch (currentDevice) {
+          case 'desktop': return <DesktopBooking />
+          case 'tablet': return <TabletBooking />
+          case 'mobile': return <MobileBooking />
+        }
+        break
+      case '/testimonials':
+        switch (currentDevice) {
+          case 'desktop': return <DesktopTestimonials />
+          case 'tablet': return <TabletTestimonials />
+          case 'mobile': return <MobileTestimonials />
+        }
+        break
+      default:
+        // Default to home page
+        switch (currentDevice) {
+          case 'desktop': return <DesktopPage />
+          case 'tablet': return <TabletPage />
+          case 'mobile': return <MobilePage />
+        }
+    }
+  }
 
   return (
     <div className="min-h-screen">
@@ -67,9 +139,7 @@ export function DeviceSwitcher() {
       </div>
 
       {/* Render Current Device Page */}
-      {currentDevice === 'desktop' && <DesktopPage />}
-      {currentDevice === 'tablet' && <TabletPage />}
-      {currentDevice === 'mobile' && <MobilePage />}
+      {renderContent()}
     </div>
   )
 } 

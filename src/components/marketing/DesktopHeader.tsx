@@ -4,8 +4,11 @@ import { motion } from "framer-motion"
 import Link from "next/link"
 import { ThemeToggle } from "../ui/ThemeToggle"
 import Image from "next/image"
+import { useRouter } from "next/navigation"
 
 export function DesktopHeader() {
+  const router = useRouter()
+
   return (
     <header className="sticky top-0 z-50 bg-gradient-to-r from-[#F7B6A6] to-white dark:from-[var(--deep-tide)] dark:to-[var(--deep-tide)]/90 backdrop-blur supports-backdrop-blur:blur-md shadow-md relative">
       {/* Force fresh deployment - Desktop header with logo and gradient - Updated */}
@@ -98,8 +101,7 @@ export function DesktopHeader() {
             >
               Services
             </motion.a>
-            <motion.a
-              href="/about"
+            <motion.button
               style={{
                 padding: '12px 24px',
                 backgroundColor: '#7FCAC5',
@@ -111,7 +113,10 @@ export function DesktopHeader() {
                 textAlign: 'center',
                 position: 'relative',
                 overflow: 'hidden',
-                transition: 'all 0.3s ease'
+                transition: 'all 0.3s ease',
+                cursor: 'pointer',
+                border: 'none',
+                outline: 'none'
               }}
               onMouseEnter={(e) => {
                 e.currentTarget.style.backgroundColor = '#F7B6A6';
@@ -122,9 +127,10 @@ export function DesktopHeader() {
                 e.currentTarget.style.boxShadow = '0 10px 15px -3px rgba(0, 0, 0, 0.1)';
               }}
               whileHover={{ y: -3, scale: 1.05 }}
+              onClick={() => router.push('/about')}
             >
               About
-            </motion.a>
+            </motion.button>
             <motion.a
               href="/booking"
               style={{
