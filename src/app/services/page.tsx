@@ -1,7 +1,7 @@
 "use client"
 
 import { motion } from "framer-motion"
-import { Clock, MapPin, Heart, Users, Car, Star } from 'lucide-react'
+import { Clock, MapPin, Heart, Car, Star } from 'lucide-react'
 import { ResponsiveHeader } from '../../components/marketing/ResponsiveHeader'
 import Footer from '../../components/Footer'
 
@@ -221,7 +221,7 @@ export default function ServicesPage() {
               <div className="text-4xl mb-4">🌟</div>
               <h3 className="font-serif text-2xl font-bold mb-4">Stay Tuned for Enhanced Experiences</h3>
               <p className="text-lg opacity-90">
-                We're working on bringing you premium enhancements to make your massage experience even more luxurious and personalized.
+                We&apos;re working on bringing you premium enhancements to make your massage experience even more luxurious and personalized.
               </p>
             </motion.div>
           </div>
