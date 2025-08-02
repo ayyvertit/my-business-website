@@ -8,7 +8,7 @@ import Footer from '../../components/Footer'
 export default function AboutPage() {
   return (
     <>
-             <ResponsiveHeader />
+      <ResponsiveHeader />
       <main className="min-h-screen bg-[var(--white-sand)] dark:bg-[var(--deep-tide)]">
 
         {/* Hero Section */}
@@ -52,16 +52,15 @@ export default function AboutPage() {
             <motion.div
               className="bg-white/80 dark:bg-white/10 backdrop-blur rounded-2xl p-8 sm:p-12 shadow-lg"
               initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.8 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8, delay: 0.2 }}
             >
               <h2 className="font-serif text-3xl font-bold text-[var(--deep-tide)] dark:text-white mb-8 text-center">
                 Cameron&apos;s Story
               </h2>
               <div className="prose prose-lg max-w-none text-[var(--coastal-mist)]">
                 <p className="text-lg leading-relaxed mb-6">
-                  With over 8 years of experience in therapeutic massage, I&apos;ve dedicated my career to helping people find relief from stress, pain, and tension. My journey began with a deep appreciation for the healing power of touch and a desire to make wellness accessible to everyone.
+                  I&apos;ve dedicated my career to helping people find relief from stress, pain, and tension. My journey began with a deep appreciation for the healing power of touch and a desire to make wellness accessible to everyone.
                 </p>
                 <p className="text-lg leading-relaxed mb-6">
                   After working in traditional spa settings, I realized that many people couldn&apos;t access quality massage therapy due to time constraints, mobility issues, or simply the inconvenience of traveling to a spa. This inspired me to create Crystal Coast Concierge Massage - bringing professional, therapeutic massage directly to your door.
