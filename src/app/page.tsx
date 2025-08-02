@@ -5,7 +5,6 @@ import { ArrowRight, MapPin, Quote } from "lucide-react"
 import { ResponsiveHeader } from "../components/marketing/ResponsiveHeader"
 import { Footer } from "../components/marketing/Footer"
 import { WaveBackground } from "../components/ui/WaveBackground"
-import { DevelopmentNotice } from "../components/ui/DevelopmentNotice"
 import Link from "next/link"
 
 // Testimonials data
@@ -74,7 +73,6 @@ export default function Home() {
   return (
     <>
       <ResponsiveHeader />
-      <DevelopmentNotice variant="home" />
       <main id="main-content" role="main" className="min-h-screen">
         {/* Hero Section - Desktop Optimized */}
         <section className="relative h-screen bg-[var(--ocean-foam)] dark:bg-[var(--deep-tide)] flex items-center justify-center text-center overflow-hidden">

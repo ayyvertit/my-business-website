@@ -22,7 +22,7 @@ export default function RootLayout({
       <body className={inter.className}>
         <ThemeProvider>
           {children}
-          <DevelopmentNotice variant="other" />
+          <DevelopmentNotice />
         </ThemeProvider>
       </body>
     </html>
