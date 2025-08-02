@@ -2,13 +2,13 @@
 
 import { motion } from "framer-motion"
 import { Shield, Award, Heart, MapPin, GraduationCap, FileText } from 'lucide-react'
-import { DesktopHeader } from '../../components/marketing/DesktopHeader'
+import { ResponsiveHeader } from '../../components/marketing/ResponsiveHeader'
 import Footer from '../../components/Footer'
 
 export default function AboutPage() {
   return (
     <>
-      <DesktopHeader />
+             <ResponsiveHeader />
       <main className="min-h-screen bg-[var(--white-sand)] dark:bg-[var(--deep-tide)]">
 
         {/* Hero Section */}

@@ -2,7 +2,7 @@
 
 import { motion } from "framer-motion"
 import { ArrowRight, MapPin, Quote } from "lucide-react"
-import { DesktopHeader } from "../components/marketing/DesktopHeader"
+import { ResponsiveHeader } from "../components/marketing/ResponsiveHeader"
 import { Footer } from "../components/marketing/Footer"
 import { WaveBackground } from "../components/ui/WaveBackground"
 import Link from "next/link"
@@ -72,7 +72,7 @@ const services = [
 export default function Home() {
   return (
     <>
-      <DesktopHeader />
+             <ResponsiveHeader />
       <main id="main-content" role="main" className="min-h-screen">
         {/* Hero Section - Desktop Optimized */}
         <section className="relative h-screen bg-[var(--ocean-foam)] dark:bg-[var(--deep-tide)] flex items-center justify-center text-center overflow-hidden">

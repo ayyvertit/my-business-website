@@ -1,5 +1,5 @@
 
-import { DesktopHeader } from '../../components/marketing/DesktopHeader'
+import { ResponsiveHeader } from '../../components/marketing/ResponsiveHeader'
 import Footer from '../../components/Footer'
 
 export default function TestimonialsPage() {
@@ -36,7 +36,7 @@ export default function TestimonialsPage() {
 
   return (
     <>
-      <DesktopHeader />
+             <ResponsiveHeader />
       <main className="min-h-screen bg-[var(--white-sand)] dark:bg-[var(--deep-tide)]">
         <div className="max-w-6xl mx-auto px-8 py-24">
           <h1 className="text-4xl font-bold text-[var(--deep-tide)] dark:text-white mb-8">

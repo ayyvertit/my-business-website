@@ -3,7 +3,7 @@
 import { useState } from "react"
 import { motion, AnimatePresence } from "framer-motion"
 import { Calendar, Clock, User, Mail, Phone, MessageSquare, CreditCard } from 'lucide-react'
-import { DesktopHeader } from '../../components/marketing/DesktopHeader'
+import { ResponsiveHeader } from '../../components/marketing/ResponsiveHeader'
 import Footer from '../../components/Footer'
 
 interface BookingData {
@@ -125,7 +125,7 @@ export default function BookingPage() {
 
   return (
     <>
-      <DesktopHeader />
+             <ResponsiveHeader />
       <main className="min-h-screen bg-[var(--white-sand)] dark:bg-[var(--deep-tide)]">
 
         {/* Hero Section */}

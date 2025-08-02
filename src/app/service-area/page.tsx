@@ -2,7 +2,7 @@
 
 import { motion } from "framer-motion"
 import { MapPin, Phone, Mail, CheckCircle, AlertCircle } from 'lucide-react'
-import { DesktopHeader } from '../../components/marketing/DesktopHeader'
+import { ResponsiveHeader } from '../../components/marketing/ResponsiveHeader'
 import Footer from '../../components/Footer'
 
 export default function ServiceAreaPage() {
@@ -25,7 +25,7 @@ export default function ServiceAreaPage() {
 
   return (
     <>
-      <DesktopHeader />
+             <ResponsiveHeader />
       <main className="min-h-screen bg-[var(--white-sand)] dark:bg-[var(--deep-tide)]">
 
         {/* Hero Section */}

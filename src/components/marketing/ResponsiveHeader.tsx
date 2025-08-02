@@ -1,44 +1,51 @@
 "use client"
 
-import { useState, useEffect } from "react"
+import { useEffect, useState } from "react"
 import { DesktopHeader } from "./DesktopHeader"
 import { TabletHeader } from "./TabletHeader"
 import { MobileHeader } from "./MobileHeader"
 
+type DeviceType = "desktop" | "tablet" | "mobile"
+
 export function ResponsiveHeader() {
-  const [screenSize, setScreenSize] = useState<'mobile' | 'tablet' | 'desktop'>('desktop')
+  const [deviceType, setDeviceType] = useState<DeviceType>("desktop")
+  const [isClient, setIsClient] = useState(false)
 
   useEffect(() => {
-    const handleResize = () => {
+    setIsClient(true)
+    
+    const detectDevice = () => {
       const width = window.innerWidth
       if (width >= 1024) {
-        setScreenSize('desktop')
+        setDeviceType("desktop")
       } else if (width >= 768) {
-        setScreenSize('tablet')
+        setDeviceType("tablet")
       } else {
-        setScreenSize('mobile')
+        setDeviceType("mobile")
       }
     }
 
-    // Set initial size
-    handleResize()
+    // Initial detection
+    detectDevice()
 
-    // Add event listener
-    window.addEventListener('resize', handleResize)
-
-    // Cleanup
-    return () => window.removeEventListener('resize', handleResize)
+    // Listen for resize events
+    window.addEventListener("resize", detectDevice)
+    
+    return () => window.removeEventListener("resize", detectDevice)
   }, [])
 
-  // Render only the appropriate component
-  switch (screenSize) {
-    case 'desktop':
-      return <DesktopHeader />
-    case 'tablet':
+  // Don't render anything until client-side to avoid hydration mismatch
+  if (!isClient) {
+    return null
+  }
+
+  // Render appropriate header based on device type
+  switch (deviceType) {
+    case "tablet":
       return <TabletHeader />
-    case 'mobile':
+    case "mobile":
       return <MobileHeader />
     default:
-      return <MobileHeader /> // Fallback
+      return <DesktopHeader />
   }
 } 

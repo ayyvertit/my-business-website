@@ -3,7 +3,7 @@
 import { useEffect, useState } from "react"
 import { motion } from "framer-motion"
 import { CheckCircle, Calendar, Clock, User, Mail, Phone, MapPin, Heart } from 'lucide-react'
-import { DesktopHeader } from '../../../components/marketing/DesktopHeader'
+import { ResponsiveHeader } from '../../../components/marketing/ResponsiveHeader'
 import Footer from '../../../components/Footer'
 
 interface BookingConfirmation {
@@ -59,7 +59,7 @@ export default function ConfirmationPage() {
     if (loading) {
         return (
             <>
-                <DesktopHeader />
+                <ResponsiveHeader />
                 <main className="min-h-screen bg-[var(--white-sand)] dark:bg-[var(--deep-tide)] flex items-center justify-center">
                     <div className="text-center">
                         <div className="w-16 h-16 border-4 border-[var(--sea-glass)] border-t-transparent rounded-full animate-spin mx-auto mb-4"></div>
@@ -73,7 +73,7 @@ export default function ConfirmationPage() {
 
     return (
         <>
-            <DesktopHeader />
+            <ResponsiveHeader />
             <main className="min-h-screen bg-[var(--white-sand)] dark:bg-[var(--deep-tide)]">
 
                 {/* Hero Section */}
