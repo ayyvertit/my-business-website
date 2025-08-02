@@ -13,7 +13,7 @@ export function ResponsiveHeader() {
 
   useEffect(() => {
     setIsClient(true)
-    
+
     const detectDevice = () => {
       const width = window.innerWidth
       if (width >= 1024) {
@@ -30,13 +30,13 @@ export function ResponsiveHeader() {
 
     // Listen for resize events
     window.addEventListener("resize", detectDevice)
-    
+
     return () => window.removeEventListener("resize", detectDevice)
   }, [])
 
-  // Don't render anything until client-side to avoid hydration mismatch
+  // Provide a fallback header during SSR to avoid blank page
   if (!isClient) {
-    return null
+    return <DesktopHeader />
   }
 
   // Render appropriate header based on device type

@@ -9,17 +9,40 @@ interface ThemeToggleProps {
   size?: "sm" | "md" | "lg"
 }
 
+// Initialize theme immediately to prevent flickering
+function initializeTheme() {
+  if (typeof window === 'undefined') return "light"
+  
+  const savedTheme = localStorage.getItem("theme") as "light" | "dark" | null
+  const systemTheme = window.matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light"
+  const initialTheme = savedTheme || systemTheme
+  
+  // Apply theme immediately
+  document.documentElement.classList.toggle("dark", initialTheme === "dark")
+  
+  return initialTheme
+}
+
 export function ThemeToggle({ className = "", size = "md" }: ThemeToggleProps) {
-  const [theme, setTheme] = useState<"light" | "dark">("light")
+  const [theme, setTheme] = useState<"light" | "dark">(() => initializeTheme())
   const [isAnimating, setIsAnimating] = useState(false)
+  const [isMounted, setIsMounted] = useState(false)
 
   useEffect(() => {
-    const savedTheme = localStorage.getItem("theme") as "light" | "dark" | null
-    const systemTheme = window.matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light"
-    const initialTheme = savedTheme || systemTheme
+    setIsMounted(true)
     
-    setTheme(initialTheme)
-    document.documentElement.classList.toggle("dark", initialTheme === "dark")
+    // Listen for system theme changes
+    const mediaQuery = window.matchMedia("(prefers-color-scheme: dark)")
+    const handleChange = (e: MediaQueryListEvent) => {
+      if (!localStorage.getItem("theme")) {
+        const newTheme = e.matches ? "dark" : "light"
+        setTheme(newTheme)
+        document.documentElement.classList.toggle("dark", newTheme === "dark")
+      }
+    }
+    
+    mediaQuery.addEventListener("change", handleChange)
+    return () => mediaQuery.removeEventListener("change", handleChange)
   }, [])
 
   const toggleTheme = () => {
@@ -47,6 +70,17 @@ export function ThemeToggle({ className = "", size = "md" }: ThemeToggleProps) {
     sm: "w-4 h-4",
     md: "w-5 h-5",
     lg: "w-6 h-6"
+  }
+
+  // Don't render until mounted to prevent hydration mismatch
+  if (!isMounted) {
+    return (
+      <div className={`${sizeClasses[size]} ${className} rounded-full bg-[var(--sea-glass)] flex items-center justify-center shadow-lg`}>
+        <div className={`${iconSizes[size]} text-white`}>
+          {theme === "light" ? <Moon /> : <Sun />}
+        </div>
+      </div>
+    )
   }
 
   return (
