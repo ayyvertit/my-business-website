@@ -1,16 +1,16 @@
 "use client"
 
 import { motion } from "framer-motion"
-import { User } from "@clerk/nextjs/server"
+// import { User } from "@clerk/nextjs/server" // Temporarily disabled
 import PreferencesForm from "./PreferencesForm"
 import BookingHistory from "./BookingHistory"
 
 interface UserDashboardProps {
-    user: User
+    user: any // Temporarily using any since Clerk is disabled
 }
 
 export default function UserDashboard({ user }: UserDashboardProps) {
-    const firstName = user.firstName || user.emailAddresses[0]?.emailAddress.split('@')[0] || 'there'
+    const firstName = user?.firstName || user?.emailAddresses?.[0]?.emailAddress?.split('@')[0] || 'there'
 
     return (
         <div className="min-h-screen bg-gradient-to-br from-[var(--ocean-foam)] to-[var(--white-sand)] dark:from-[var(--deep-tide)] dark:to-[var(--ocean-foam)]">
