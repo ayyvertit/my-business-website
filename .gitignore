@@ -126,3 +126,6 @@ yarn-error.log*
 
 # Turbo
 .turbo
+
+# clerk configuration (can include secrets)
+/.clerk/

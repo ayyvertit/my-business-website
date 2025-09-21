@@ -144,7 +144,7 @@ export default function Footer() {
                 &copy; {currentYear} Crystal Coast Concierge Massage. All rights reserved.
               </p>
               <p className="text-gray-500 text-xs mt-2">
-                Cameron Averitt, LMBT | NC License Pending
+                Cameron Averitt, LMBT | NC License #22913
               </p>
             </div>
             <div className="flex space-x-8 text-sm text-gray-400">

@@ -8,6 +8,15 @@ export const SITE_CONFIG = {
     address: "Crystal Coast, North Carolina"
 } as const
 
+// License Information
+export const LICENSE_INFO = {
+    therapist: "Cameron Averitt",
+    credentials: "LMBT",
+    licenseNumber: "22913",
+    state: "North Carolina",
+    fullLicense: "NC License #22913"
+} as const
+
 // Service Areas
 export const SERVICE_AREAS = [
     "Atlantic Beach",

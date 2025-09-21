@@ -5,6 +5,7 @@ import { motion, AnimatePresence } from "framer-motion"
 import { Menu, X } from "lucide-react"
 import { ThemeToggle } from "../ui/ThemeToggle"
 import Image from "next/image"
+import { UserButton, SignedIn, SignedOut } from "@clerk/nextjs"
 
 export function MobileHeader() {
   const [isMenuOpen, setIsMenuOpen] = useState(false)
@@ -68,6 +69,18 @@ export function MobileHeader() {
           <div className="absolute right-0 flex items-center gap-2">
             <ThemeToggle size="sm" />
 
+            {/* User Button for authenticated users */}
+            <SignedIn>
+              <UserButton
+                appearance={{
+                  elements: {
+                    userButtonAvatarBox: "w-8 h-8",
+                    userButtonTrigger: "focus:shadow-none"
+                  }
+                }}
+              />
+            </SignedIn>
+
             {/* Hamburger Menu Button */}
             <button
               onClick={toggleMenu}
@@ -109,12 +122,35 @@ export function MobileHeader() {
                     className="block w-full px-4 py-3 text-left text-[var(--deep-tide)] dark:text-[var(--ocean-foam)] font-medium rounded-lg hover:bg-[var(--ocean-foam)] dark:hover:bg-white/20 transition-colors"
                     initial={{ opacity: 0, x: -20 }}
                     animate={{ opacity: 1, x: 0 }}
-                    transition={{ duration: 0.3, delay: index * 0.05 }}
-                    whileTap={{ scale: 0.98 }}
+                    transition={{ duration: 0.3, delay: index * 0.1 }}
                   >
                     {item.label}
                   </motion.a>
                 ))}
+                <SignedIn>
+                  <motion.a
+                    href="/dashboard"
+                    onClick={closeMenu}
+                    className="block w-full px-4 py-3 text-left text-[var(--deep-tide)] dark:text-[var(--ocean-foam)] font-medium rounded-lg hover:bg-[var(--ocean-foam)] dark:hover:bg-white/20 transition-colors"
+                    initial={{ opacity: 0, x: -20 }}
+                    animate={{ opacity: 1, x: 0 }}
+                    transition={{ duration: 0.3, delay: navigationItems.length * 0.1 }}
+                  >
+                    Dashboard
+                  </motion.a>
+                </SignedIn>
+                <SignedOut>
+                  <motion.a
+                    href="/login"
+                    onClick={closeMenu}
+                    className="block w-full px-4 py-3 text-left text-[var(--deep-tide)] dark:text-[var(--ocean-foam)] font-medium rounded-lg hover:bg-[var(--ocean-foam)] dark:hover:bg-white/20 transition-colors"
+                    initial={{ opacity: 0, x: -20 }}
+                    animate={{ opacity: 1, x: 0 }}
+                    transition={{ duration: 0.3, delay: navigationItems.length * 0.1 }}
+                  >
+                    Login
+                  </motion.a>
+                </SignedOut>
               </div>
             </nav>
           </motion.div>

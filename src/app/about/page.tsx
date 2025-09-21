@@ -110,7 +110,7 @@ export default function AboutPage() {
                   Licensed & Certified
                 </h3>
                 <p className="text-[var(--coastal-mist)]">
-                  State-licensed massage therapist with ongoing continuing education
+                  State-licensed massage therapist (NC License #22913) with ongoing continuing education
                 </p>
               </motion.div>
 

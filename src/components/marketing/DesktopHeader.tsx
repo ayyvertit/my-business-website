@@ -5,6 +5,7 @@ import Link from "next/link"
 import { ThemeToggle } from "../ui/ThemeToggle"
 import Image from "next/image"
 import { useRouter } from "next/navigation"
+import { UserButton, SignedIn, SignedOut } from "@clerk/nextjs"
 
 export function DesktopHeader() {
   const router = useRouter()
@@ -107,6 +108,7 @@ export function DesktopHeader() {
               Services
             </motion.a>
             <motion.button
+              onClick={() => router.push('/about')}
               style={{
                 padding: '12px 24px',
                 backgroundColor: '#7FCAC5',
@@ -119,9 +121,8 @@ export function DesktopHeader() {
                 position: 'relative',
                 overflow: 'hidden',
                 transition: 'all 0.3s ease',
-                cursor: 'pointer',
                 border: 'none',
-                outline: 'none'
+                cursor: 'pointer'
               }}
               onMouseEnter={(e) => {
                 e.currentTarget.style.backgroundColor = '#F7B6A6';
@@ -132,7 +133,6 @@ export function DesktopHeader() {
                 e.currentTarget.style.boxShadow = '0 10px 15px -3px rgba(0, 0, 0, 0.1)';
               }}
               whileHover={{ y: -3, scale: 1.05 }}
-              onClick={() => router.push('/about')}
             >
               About
             </motion.button>
@@ -217,6 +217,64 @@ export function DesktopHeader() {
             >
               Coverage
             </motion.a>
+            <SignedIn>
+              <motion.a
+                href="/dashboard"
+                style={{
+                  padding: '12px 24px',
+                  backgroundColor: '#F7B6A6',
+                  color: 'white',
+                  fontWeight: '600',
+                  borderRadius: '9999px',
+                  boxShadow: '0 10px 15px -3px rgba(0, 0, 0, 0.1)',
+                  textDecoration: 'none',
+                  textAlign: 'center',
+                  position: 'relative',
+                  overflow: 'hidden',
+                  transition: 'all 0.3s ease'
+                }}
+                onMouseEnter={(e) => {
+                  e.currentTarget.style.backgroundColor = '#7FCAC5';
+                  e.currentTarget.style.boxShadow = '0 20px 25px -5px rgba(0, 0, 0, 0.1)';
+                }}
+                onMouseLeave={(e) => {
+                  e.currentTarget.style.backgroundColor = '#F7B6A6';
+                  e.currentTarget.style.boxShadow = '0 10px 15px -3px rgba(0, 0, 0, 0.1)';
+                }}
+                whileHover={{ y: -3, scale: 1.05 }}
+              >
+                Dashboard
+              </motion.a>
+            </SignedIn>
+            <SignedOut>
+              <motion.a
+                href="/login"
+                style={{
+                  padding: '12px 24px',
+                  backgroundColor: '#F7B6A6',
+                  color: 'white',
+                  fontWeight: '600',
+                  borderRadius: '9999px',
+                  boxShadow: '0 10px 15px -3px rgba(0, 0, 0, 0.1)',
+                  textDecoration: 'none',
+                  textAlign: 'center',
+                  position: 'relative',
+                  overflow: 'hidden',
+                  transition: 'all 0.3s ease'
+                }}
+                onMouseEnter={(e) => {
+                  e.currentTarget.style.backgroundColor = '#7FCAC5';
+                  e.currentTarget.style.boxShadow = '0 20px 25px -5px rgba(0, 0, 0, 0.1)';
+                }}
+                onMouseLeave={(e) => {
+                  e.currentTarget.style.backgroundColor = '#F7B6A6';
+                  e.currentTarget.style.boxShadow = '0 10px 15px -3px rgba(0, 0, 0, 0.1)';
+                }}
+                whileHover={{ y: -3, scale: 1.05 }}
+              >
+                Login
+              </motion.a>
+            </SignedOut>
           </div>
         </div>
       </div>
@@ -231,6 +289,25 @@ export function DesktopHeader() {
       }}>
         <ThemeToggle size="lg" />
       </div>
+
+      {/* User Button - Fixed positioned on the right, below theme toggle */}
+      <SignedIn>
+        <div style={{
+          position: 'fixed',
+          top: '120px',
+          right: '32px',
+          zIndex: 9999
+        }}>
+          <UserButton
+            appearance={{
+              elements: {
+                userButtonAvatarBox: "w-10 h-10",
+                userButtonTrigger: "focus:shadow-none"
+              }
+            }}
+          />
+        </div>
+      </SignedIn>
     </header>
   )
 } 

@@ -4,6 +4,7 @@ import { motion } from "framer-motion"
 import Link from "next/link"
 import { ThemeToggle } from "../ui/ThemeToggle"
 import Image from "next/image"
+import { UserButton, SignedIn, SignedOut } from "@clerk/nextjs"
 
 export function TabletHeader() {
   return (
@@ -217,6 +218,66 @@ export function TabletHeader() {
             >
               Reviews
             </motion.a>
+            <SignedIn>
+              <motion.a
+                href="/dashboard"
+                style={{
+                  padding: '8px 16px',
+                  backgroundColor: '#F7B6A6',
+                  color: 'white',
+                  fontWeight: '600',
+                  borderRadius: '9999px',
+                  boxShadow: '0 8px 12px -3px rgba(0, 0, 0, 0.1)',
+                  textDecoration: 'none',
+                  textAlign: 'center',
+                  position: 'relative',
+                  overflow: 'hidden',
+                  transition: 'all 0.3s ease',
+                  fontSize: '14px'
+                }}
+                onMouseEnter={(e) => {
+                  e.currentTarget.style.backgroundColor = '#7FCAC5';
+                  e.currentTarget.style.boxShadow = '0 16px 20px -5px rgba(0, 0, 0, 0.1)';
+                }}
+                onMouseLeave={(e) => {
+                  e.currentTarget.style.backgroundColor = '#F7B6A6';
+                  e.currentTarget.style.boxShadow = '0 8px 12px -3px rgba(0, 0, 0, 0.1)';
+                }}
+                whileHover={{ y: -2, scale: 1.03 }}
+              >
+                Dashboard
+              </motion.a>
+            </SignedIn>
+            <SignedOut>
+              <motion.a
+                href="/login"
+                style={{
+                  padding: '8px 16px',
+                  backgroundColor: '#7FCAC5',
+                  color: 'white',
+                  fontWeight: '600',
+                  borderRadius: '9999px',
+                  boxShadow: '0 8px 12px -3px rgba(0, 0, 0, 0.1)',
+                  textDecoration: 'none',
+                  textAlign: 'center',
+                  position: 'relative',
+                  overflow: 'hidden',
+                  transition: 'all 0.3s ease',
+                  fontSize: '14px'
+                }}
+                onMouseEnter={(e) => {
+                  e.currentTarget.style.backgroundColor = '#F7B6A6';
+                  e.currentTarget.style.boxShadow = '0 16px 20px -5px rgba(0, 0, 0, 0.1)';
+                }}
+                onMouseLeave={(e) => {
+                  e.currentTarget.style.backgroundColor = '#7FCAC5';
+                  e.currentTarget.style.boxShadow = '0 8px 12px -3px rgba(0, 0, 0, 0.1)';
+                }}
+                whileHover={{ y: -2, scale: 1.03 }}
+              >
+                Login
+              </motion.a>
+            </SignedOut>
           </div>
         </div>
       </div>
@@ -231,6 +292,25 @@ export function TabletHeader() {
       }}>
         <ThemeToggle size="md" />
       </div>
+
+      {/* User Button - Fixed positioned on the right, below theme toggle */}
+      <SignedIn>
+        <div style={{
+          position: 'fixed',
+          top: '120px',
+          right: '32px',
+          zIndex: 9999
+        }}>
+          <UserButton
+            appearance={{
+              elements: {
+                userButtonAvatarBox: "w-9 h-9",
+                userButtonTrigger: "focus:shadow-none"
+              }
+            }}
+          />
+        </div>
+      </SignedIn>
     </header>
   )
 } 
