@@ -37,11 +37,11 @@ export async function POST(request: NextRequest) {
 
 export async function GET(request: NextRequest) {
     try {
-        const user = await currentUser()
+        // const user = await currentUser() // Temporarily disabled
 
-        if (!user) {
-            return NextResponse.json({ error: "Unauthorized" }, { status: 401 })
-        }
+        // if (!user) {
+        //     return NextResponse.json({ error: "Unauthorized" }, { status: 401 })
+        // }
 
         // In a real application, you would fetch from a database
         // For now, we'll return mock data
