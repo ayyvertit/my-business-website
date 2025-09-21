@@ -44,9 +44,9 @@ export default function UserDashboard({ user }: UserDashboardProps) {
                         <div className="space-y-3">
                             <div className="flex items-center space-x-3">
                                 <span className="text-[var(--deep-tide)]/70 dark:text-[var(--ocean-foam)]/70 font-medium">Email:</span>
-                                <span className="text-[var(--deep-tide)] dark:text-white">{user.emailAddresses[0]?.emailAddress}</span>
+                                <span className="text-[var(--deep-tide)] dark:text-white">{user?.emailAddresses?.[0]?.emailAddress || 'No email'}</span>
                             </div>
-                            {user.phoneNumbers[0] && (
+                            {user?.phoneNumbers?.[0] && (
                                 <div className="flex items-center space-x-3">
                                     <span className="text-[var(--deep-tide)]/70 dark:text-[var(--ocean-foam)]/70 font-medium">Phone:</span>
                                     <span className="text-[var(--deep-tide)] dark:text-white">{user.phoneNumbers[0].phoneNumber}</span>
