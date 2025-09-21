@@ -13,7 +13,7 @@ export async function POST(request: NextRequest) {
 
         // In a real application, you would save this to a database
         // For now, we'll just return a success response
-        console.log("Saving preferences for user:", user.id, preferences)
+        console.log("Saving preferences:", preferences)
 
         // Mock database save
         // await db.userPreferences.upsert({
