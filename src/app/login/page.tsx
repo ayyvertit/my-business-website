@@ -3,6 +3,7 @@
 // import { SignIn, SignUp } from "@clerk/nextjs" // Temporarily disabled
 import { useState } from "react"
 import { motion } from "framer-motion"
+import Link from "next/link"
 
 export default function LoginPage() {
     const [isSignIn, setIsSignIn] = useState(true)
@@ -63,12 +64,12 @@ export default function LoginPage() {
                             <p className="text-[var(--deep-tide)] dark:text-[var(--ocean-foam)] mb-6">
                                 User authentication is currently being set up. Please check back soon!
                             </p>
-                            <a 
+                            <Link 
                                 href="/" 
                                 className="inline-block bg-[var(--deep-tide)] hover:bg-[var(--deep-tide)]/90 text-white font-semibold px-6 py-3 rounded-lg transition-colors"
                             >
                                 Return to Home
-                            </a>
+                            </Link>
                         </div>
                     </motion.div>
                 </motion.div>
