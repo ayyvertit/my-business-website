@@ -4,7 +4,7 @@ import { motion } from "framer-motion"
 import Link from "next/link"
 import { ThemeToggle } from "../ui/ThemeToggle"
 import Image from "next/image"
-import { UserButton, SignedIn, SignedOut } from "@clerk/nextjs"
+// import { UserButton, SignedIn, SignedOut } from "@clerk/nextjs" // Temporarily disabled
 
 export function TabletHeader() {
   return (

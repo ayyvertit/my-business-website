@@ -1,13 +1,13 @@
 import { NextRequest, NextResponse } from "next/server"
-import { currentUser } from "@clerk/nextjs/server"
+// import { currentUser } from "@clerk/nextjs/server" // Temporarily disabled
 
 export async function POST(request: NextRequest) {
     try {
-        const user = await currentUser()
+        // const user = await currentUser() // Temporarily disabled
 
-        if (!user) {
-            return NextResponse.json({ error: "Unauthorized" }, { status: 401 })
-        }
+        // if (!user) {
+        //     return NextResponse.json({ error: "Unauthorized" }, { status: 401 })
+        // }
 
         const preferences = await request.json()
 

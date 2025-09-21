@@ -1,6 +1,6 @@
 "use client"
 
-import { SignIn, SignUp } from "@clerk/nextjs"
+// import { SignIn, SignUp } from "@clerk/nextjs" // Temporarily disabled
 import { useState } from "react"
 import { motion } from "framer-motion"
 
