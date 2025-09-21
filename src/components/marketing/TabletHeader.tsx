@@ -218,7 +218,8 @@ export function TabletHeader() {
             >
               Reviews
             </motion.a>
-            <SignedIn>
+            {/* Temporarily disabled Clerk authentication */}
+            <div>
               <motion.a
                 href="/dashboard"
                 style={{
@@ -247,8 +248,8 @@ export function TabletHeader() {
               >
                 Dashboard
               </motion.a>
-            </SignedIn>
-            <SignedOut>
+            </div>
+            <div>
               <motion.a
                 href="/login"
                 style={{
@@ -277,7 +278,7 @@ export function TabletHeader() {
               >
                 Login
               </motion.a>
-            </SignedOut>
+            </div>
           </div>
         </div>
       </div>
@@ -293,24 +294,7 @@ export function TabletHeader() {
         <ThemeToggle size="md" />
       </div>
 
-      {/* User Button - Fixed positioned on the right, below theme toggle */}
-      <SignedIn>
-        <div style={{
-          position: 'fixed',
-          top: '120px',
-          right: '32px',
-          zIndex: 9999
-        }}>
-          <UserButton
-            appearance={{
-              elements: {
-                userButtonAvatarBox: "w-9 h-9",
-                userButtonTrigger: "focus:shadow-none"
-              }
-            }}
-          />
-        </div>
-      </SignedIn>
+      {/* User Button - Temporarily disabled */}
     </header>
   )
 } 

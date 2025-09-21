@@ -48,86 +48,28 @@ export default function LoginPage() {
                         </button>
                     </div>
 
-                    {/* Clerk Components */}
+                    {/* Temporarily disabled Clerk authentication */}
                     <motion.div
                         key={isSignIn ? "signin" : "signup"}
                         initial={{ opacity: 0, x: 20 }}
                         animate={{ opacity: 1, x: 0 }}
                         transition={{ duration: 0.3 }}
+                        className="text-center p-8"
                     >
-                        {isSignIn ? (
-                            <SignIn
-                                appearance={{
-                                    elements: {
-                                        formButtonPrimary: "bg-[var(--deep-tide)] hover:bg-[var(--deep-tide)]/90 text-white font-semibold",
-                                        card: "bg-transparent shadow-none",
-                                        headerTitle: "text-[var(--deep-tide)] dark:text-white font-bold text-xl",
-                                        headerSubtitle: "text-[var(--deep-tide)] dark:text-[var(--ocean-foam)] font-medium",
-                                        formFieldLabel: "text-[var(--deep-tide)] dark:text-white font-semibold",
-                                        formFieldInput: "bg-[var(--coastal-mist)]/70 dark:bg-[var(--ocean-foam)]/60 border-[var(--coastal-mist)] dark:border-[var(--ocean-foam)] text-[var(--deep-tide)] dark:text-white font-medium placeholder:text-[var(--deep-tide)]/60 dark:placeholder:text-[var(--ocean-foam)]/60",
-                                        footerActionLink: "text-[var(--deep-tide)] dark:text-[var(--ocean-foam)] font-semibold hover:text-[var(--deep-tide)]/80 dark:hover:text-white/80",
-                                        dividerLine: "bg-[var(--coastal-mist)] dark:bg-[var(--ocean-foam)]",
-                                        dividerText: "text-[var(--deep-tide)] dark:text-[var(--ocean-foam)] font-medium",
-                                        formFieldInputShowPasswordButton: "text-[var(--deep-tide)] dark:text-[var(--ocean-foam)]",
-                                        formFieldInputShowPasswordButtonIcon: "text-[var(--deep-tide)] dark:text-[var(--ocean-foam)]",
-                                        formResendCodeLink: "text-[var(--deep-tide)] dark:text-[var(--ocean-foam)] font-semibold",
-                                        formFieldRow: "text-[var(--deep-tide)] dark:text-[var(--ocean-foam)]",
-                                        formFieldHintText: "text-[var(--deep-tide)]/80 dark:text-[var(--ocean-foam)]/80 font-medium",
-                                        formFieldErrorText: "text-red-600 dark:text-red-400 font-semibold",
-                                        alertText: "text-[var(--deep-tide)] dark:text-[var(--ocean-foam)] font-medium",
-                                        alert: "bg-[var(--coastal-mist)]/50 dark:bg-[var(--ocean-foam)]/20 border-[var(--coastal-mist)] dark:border-[var(--ocean-foam)]",
-                                        socialButtonsBlockButton: "bg-[var(--coastal-mist)]/70 dark:bg-[var(--ocean-foam)]/60 border-[var(--coastal-mist)] dark:border-[var(--ocean-foam)] text-[var(--deep-tide)] dark:text-[var(--ocean-foam)] font-semibold hover:bg-[var(--coastal-mist)]/90 dark:hover:bg-[var(--ocean-foam)]/80",
-                                        socialButtonsBlockButtonText: "text-[var(--deep-tide)] dark:text-[var(--ocean-foam)] font-semibold",
-                                        formFieldAction: "text-[var(--deep-tide)] dark:text-[var(--ocean-foam)] font-semibold",
-                                        formFieldActionLink: "text-[var(--deep-tide)] dark:text-[var(--ocean-foam)] font-semibold hover:text-[var(--deep-tide)]/80 dark:hover:text-white/80",
-                                        identityPreviewText: "text-[var(--deep-tide)] dark:text-[var(--ocean-foam)] font-medium",
-                                        identityPreviewEditButton: "text-[var(--deep-tide)] dark:text-[var(--ocean-foam)] font-semibold",
-                                        modalBackdrop: "bg-black/50",
-                                        modalContent: "bg-white/95 dark:bg-[var(--deep-tide)]/95 backdrop-blur",
-                                        modalCard: "bg-transparent shadow-none",
-                                        modalContentRoot: "bg-transparent",
-                                        modalContentRootWithScroll: "bg-transparent",
-                                        modalContentRootWithoutScroll: "bg-transparent",
-                                    },
-                                }}
-                            />
-                        ) : (
-                            <SignUp
-                                appearance={{
-                                    elements: {
-                                        formButtonPrimary: "bg-[var(--deep-tide)] hover:bg-[var(--deep-tide)]/90 text-white font-semibold",
-                                        card: "bg-transparent shadow-none",
-                                        headerTitle: "text-[var(--deep-tide)] dark:text-white font-bold text-xl",
-                                        headerSubtitle: "text-[var(--deep-tide)] dark:text-[var(--ocean-foam)] font-medium",
-                                        formFieldLabel: "text-[var(--deep-tide)] dark:text-white font-semibold",
-                                        formFieldInput: "bg-[var(--coastal-mist)]/70 dark:bg-[var(--ocean-foam)]/60 border-[var(--coastal-mist)] dark:border-[var(--ocean-foam)] text-[var(--deep-tide)] dark:text-white font-medium placeholder:text-[var(--deep-tide)]/60 dark:placeholder:text-[var(--ocean-foam)]/60",
-                                        footerActionLink: "text-[var(--deep-tide)] dark:text-[var(--ocean-foam)] font-semibold hover:text-[var(--deep-tide)]/80 dark:hover:text-white/80",
-                                        dividerLine: "bg-[var(--coastal-mist)] dark:bg-[var(--ocean-foam)]",
-                                        dividerText: "text-[var(--deep-tide)] dark:text-[var(--ocean-foam)] font-medium",
-                                        formFieldInputShowPasswordButton: "text-[var(--deep-tide)] dark:text-[var(--ocean-foam)]",
-                                        formFieldInputShowPasswordButtonIcon: "text-[var(--deep-tide)] dark:text-[var(--ocean-foam)]",
-                                        formResendCodeLink: "text-[var(--deep-tide)] dark:text-[var(--ocean-foam)] font-semibold",
-                                        formFieldRow: "text-[var(--deep-tide)] dark:text-[var(--ocean-foam)]",
-                                        formFieldHintText: "text-[var(--deep-tide)]/80 dark:text-[var(--ocean-foam)]/80 font-medium",
-                                        formFieldErrorText: "text-red-600 dark:text-red-400 font-semibold",
-                                        alertText: "text-[var(--deep-tide)] dark:text-[var(--ocean-foam)] font-medium",
-                                        alert: "bg-[var(--coastal-mist)]/50 dark:bg-[var(--ocean-foam)]/20 border-[var(--coastal-mist)] dark:border-[var(--ocean-foam)]",
-                                        socialButtonsBlockButton: "bg-[var(--coastal-mist)]/70 dark:bg-[var(--ocean-foam)]/60 border-[var(--coastal-mist)] dark:border-[var(--ocean-foam)] text-[var(--deep-tide)] dark:text-[var(--ocean-foam)] font-semibold hover:bg-[var(--coastal-mist)]/90 dark:hover:bg-[var(--ocean-foam)]/80",
-                                        socialButtonsBlockButtonText: "text-[var(--deep-tide)] dark:text-[var(--ocean-foam)] font-semibold",
-                                        formFieldAction: "text-[var(--deep-tide)] dark:text-[var(--ocean-foam)] font-semibold",
-                                        formFieldActionLink: "text-[var(--deep-tide)] dark:text-[var(--ocean-foam)] font-semibold hover:text-[var(--deep-tide)]/80 dark:hover:text-white/80",
-                                        identityPreviewText: "text-[var(--deep-tide)] dark:text-[var(--ocean-foam)] font-medium",
-                                        identityPreviewEditButton: "text-[var(--deep-tide)] dark:text-[var(--ocean-foam)] font-semibold",
-                                        modalBackdrop: "bg-black/50",
-                                        modalContent: "bg-white/95 dark:bg-[var(--deep-tide)]/95 backdrop-blur",
-                                        modalCard: "bg-transparent shadow-none",
-                                        modalContentRoot: "bg-transparent",
-                                        modalContentRootWithScroll: "bg-transparent",
-                                        modalContentRootWithoutScroll: "bg-transparent",
-                                    },
-                                }}
-                            />
-                        )}
+                        <div className="bg-[var(--coastal-mist)]/20 dark:bg-[var(--ocean-foam)]/20 rounded-xl p-8 border border-[var(--coastal-mist)] dark:border-[var(--ocean-foam)]">
+                            <h3 className="text-xl font-bold text-[var(--deep-tide)] dark:text-white mb-4">
+                                Authentication Temporarily Disabled
+                            </h3>
+                            <p className="text-[var(--deep-tide)] dark:text-[var(--ocean-foam)] mb-6">
+                                User authentication is currently being set up. Please check back soon!
+                            </p>
+                            <a 
+                                href="/" 
+                                className="inline-block bg-[var(--deep-tide)] hover:bg-[var(--deep-tide)]/90 text-white font-semibold px-6 py-3 rounded-lg transition-colors"
+                            >
+                                Return to Home
+                            </a>
+                        </div>
                     </motion.div>
                 </motion.div>
             </div>

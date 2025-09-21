@@ -1,5 +1,5 @@
 // import { currentUser } from "@clerk/nextjs/server" // Temporarily disabled
-import { redirect } from "next/navigation"
+// import { redirect } from "next/navigation" // Temporarily disabled
 import UserDashboard from "@/components/UserDashboard"
 
 export default async function DashboardPage() {
