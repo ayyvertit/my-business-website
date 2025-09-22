@@ -3,9 +3,9 @@ import { Inter } from "next/font/google"
 import "./globals.css"
 import { SITE_CONFIG } from "@/lib/constants"
 import { ThemeProvider } from "@/components/ui/ThemeProvider"
-import { ClerkProvider, SignedIn, SignedOut, UserButton } from "@clerk/nextjs"
+import { SignedIn, UserButton } from "@clerk/nextjs"
 import { Suspense } from "react"
-import Link from "next/link"
+import ClerkWrapper from "@/components/ClerkWrapper"
 
 const inter = Inter({ subsets: ["latin"] })
 
@@ -19,32 +19,10 @@ export default function RootLayout({
 }: {
   children: React.ReactNode
 }) {
-  // Check if Clerk is configured
-  const clerkKey = process.env.NEXT_PUBLIC_CLERK_PUBLISHABLE_KEY
-  
-  if (!clerkKey || clerkKey === 'your_publishable_key_here') {
-    // Fallback without Clerk
-    return (
-      <html lang="en" suppressHydrationWarning>
-        <body className={inter.className}>
-          <ThemeProvider>
-            {children}
-          </ThemeProvider>
-        </body>
-      </html>
-    )
-  }
-
   return (
-    <ClerkProvider
-      publishableKey={clerkKey}
-      signInUrl="/login"
-      signUpUrl="/login"
-      afterSignInUrl="/dashboard"
-      afterSignUpUrl="/dashboard"
-    >
-      <html lang="en" suppressHydrationWarning>
-        <body className={inter.className}>
+    <html lang="en" suppressHydrationWarning>
+      <body className={inter.className}>
+        <ClerkWrapper>
           <ThemeProvider>
             {/* Global User Button - only shows when signed in */}
             <Suspense fallback={null}>
@@ -64,8 +42,8 @@ export default function RootLayout({
             </Suspense>
             {children}
           </ThemeProvider>
-        </body>
-      </html>
-    </ClerkProvider>
+        </ClerkWrapper>
+      </body>
+    </html>
   )
 }

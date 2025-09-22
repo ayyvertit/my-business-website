@@ -4,36 +4,9 @@ import { SignIn, SignUp } from "@clerk/nextjs"
 import { useState } from "react"
 import { motion } from "framer-motion"
 import { Suspense } from "react"
-import Link from "next/link"
 
 export default function LoginPage() {
     const [isSignIn, setIsSignIn] = useState(true)
-    
-    // Check if Clerk is configured
-    const clerkKey = process.env.NEXT_PUBLIC_CLERK_PUBLISHABLE_KEY
-    
-    if (!clerkKey || clerkKey === 'your_publishable_key_here') {
-        return (
-            <div className="min-h-screen bg-gradient-to-br from-[var(--ocean-foam)] to-[var(--white-sand)] dark:from-[var(--deep-tide)] dark:to-[var(--ocean-foam)] flex items-center justify-center p-4">
-                <div className="w-full max-w-md">
-                    <div className="bg-white/95 dark:bg-[var(--deep-tide)]/95 backdrop-blur rounded-2xl shadow-xl border border-[var(--coastal-mist)] dark:border-[var(--ocean-foam)] p-8 text-center">
-                        <h1 className="text-2xl font-bold text-[var(--deep-tide)] dark:text-white mb-4">
-                            Authentication Setup Required
-                        </h1>
-                        <p className="text-[var(--deep-tide)] dark:text-[var(--ocean-foam)] mb-6">
-                            Please configure your Clerk environment variables in Vercel to enable authentication.
-                        </p>
-                        <Link 
-                            href="/" 
-                            className="inline-block bg-[var(--deep-tide)] hover:bg-[var(--deep-tide)]/90 text-white font-semibold px-6 py-3 rounded-lg transition-colors"
-                        >
-                            Return to Home
-                        </Link>
-                    </div>
-                </div>
-            </div>
-        )
-    }
 
     return (
         <div className="min-h-screen bg-gradient-to-br from-[var(--ocean-foam)] to-[var(--white-sand)] dark:from-[var(--deep-tide)] dark:to-[var(--ocean-foam)] flex items-center justify-center p-4">
