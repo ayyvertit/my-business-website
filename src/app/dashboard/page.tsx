@@ -1,13 +1,34 @@
-// import { currentUser } from "@clerk/nextjs/server" // Temporarily disabled
-// import { redirect } from "next/navigation" // Temporarily disabled
+"use client"
+
+import { useUser } from "@clerk/nextjs"
+import { useRouter } from "next/navigation"
+import { useEffect } from "react"
 import UserDashboard from "@/components/UserDashboard"
 
-export default async function DashboardPage() {
-    // const user = await currentUser() // Temporarily disabled
+export default function DashboardPage() {
+    const { user, isLoaded } = useUser()
+    const router = useRouter()
 
-    // if (!user) {
-    //     redirect("/login")
-    // }
+    useEffect(() => {
+        if (isLoaded && !user) {
+            router.push("/login")
+        }
+    }, [user, isLoaded, router])
 
-    return <UserDashboard user={null} />
+    if (!isLoaded) {
+        return (
+            <div className="min-h-screen bg-gradient-to-br from-[var(--ocean-foam)] to-[var(--white-sand)] dark:from-[var(--deep-tide)] dark:to-[var(--ocean-foam)] flex items-center justify-center">
+                <div className="animate-pulse">
+                    <div className="h-8 bg-[var(--coastal-mist)] dark:bg-[var(--ocean-foam)] rounded mb-4"></div>
+                    <div className="h-4 bg-[var(--coastal-mist)] dark:bg-[var(--ocean-foam)] rounded"></div>
+                </div>
+            </div>
+        )
+    }
+
+    if (!user) {
+        return null
+    }
+
+    return <UserDashboard user={user} />
 } 
