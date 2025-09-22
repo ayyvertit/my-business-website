@@ -5,6 +5,9 @@ import { useRouter } from "next/navigation"
 import { useEffect, useState } from "react"
 import UserDashboard from "@/components/UserDashboard"
 
+// Force dynamic rendering
+export const dynamic = 'force-dynamic'
+
 export default function DashboardPage() {
     const { user, isLoaded } = useUser()
     const router = useRouter()

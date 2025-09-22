@@ -5,6 +5,9 @@ import { useState, useEffect } from "react"
 import { motion } from "framer-motion"
 import { Suspense } from "react"
 
+// Force dynamic rendering
+export const dynamic = 'force-dynamic'
+
 export default function LoginPage() {
     const [isSignIn, setIsSignIn] = useState(true)
     const [isClient, setIsClient] = useState(false)
