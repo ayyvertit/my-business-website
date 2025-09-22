@@ -3,6 +3,11 @@
 import { SignIn, SignUp } from "@clerk/nextjs"
 import { useState } from "react"
 import { motion } from "framer-motion"
+import dynamic from "next/dynamic"
+
+// Dynamically import Clerk components to avoid SSR issues
+const DynamicSignIn = dynamic(() => import("@clerk/nextjs").then(mod => ({ default: mod.SignIn })), { ssr: false })
+const DynamicSignUp = dynamic(() => import("@clerk/nextjs").then(mod => ({ default: mod.SignUp })), { ssr: false })
 
 export default function LoginPage() {
     const [isSignIn, setIsSignIn] = useState(true)
@@ -55,8 +60,9 @@ export default function LoginPage() {
                         animate={{ opacity: 1, x: 0 }}
                         transition={{ duration: 0.3 }}
                     >
+                        <div className="min-h-[400px] flex items-center justify-center">
                         {isSignIn ? (
-                            <SignIn
+                            <DynamicSignIn
                                 appearance={{
                                     elements: {
                                         formButtonPrimary: "bg-[var(--deep-tide)] hover:bg-[var(--deep-tide)]/90 text-white font-semibold",
@@ -92,7 +98,7 @@ export default function LoginPage() {
                                 }}
                             />
                         ) : (
-                            <SignUp
+                            <DynamicSignUp
                                 appearance={{
                                     elements: {
                                         formButtonPrimary: "bg-[var(--deep-tide)] hover:bg-[var(--deep-tide)]/90 text-white font-semibold",
@@ -128,6 +134,7 @@ export default function LoginPage() {
                                 }}
                             />
                         )}
+                        </div>
                     </motion.div>
                 </motion.div>
             </div>
