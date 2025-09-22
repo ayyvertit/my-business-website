@@ -3,6 +3,7 @@
 import { SignIn, SignUp } from "@clerk/nextjs"
 import { useState } from "react"
 import { motion } from "framer-motion"
+import { Suspense } from "react"
 
 export default function LoginPage() {
     const [isSignIn, setIsSignIn] = useState(true)
@@ -49,12 +50,20 @@ export default function LoginPage() {
                     </div>
 
                     {/* Clerk Components */}
-                    <motion.div
-                        key={isSignIn ? "signin" : "signup"}
-                        initial={{ opacity: 0, x: 20 }}
-                        animate={{ opacity: 1, x: 0 }}
-                        transition={{ duration: 0.3 }}
-                    >
+                    <Suspense fallback={
+                        <div className="flex items-center justify-center p-8">
+                            <div className="text-center">
+                                <div className="animate-spin rounded-full h-8 w-8 border-b-2 border-[var(--deep-tide)] mx-auto mb-4"></div>
+                                <p className="text-[var(--deep-tide)] dark:text-[var(--ocean-foam)]">Loading authentication...</p>
+                            </div>
+                        </div>
+                    }>
+                        <motion.div
+                            key={isSignIn ? "signin" : "signup"}
+                            initial={{ opacity: 0, x: 20 }}
+                            animate={{ opacity: 1, x: 0 }}
+                            transition={{ duration: 0.3 }}
+                        >
                         {isSignIn ? (
                             <SignIn
                                 appearance={{
@@ -128,7 +137,8 @@ export default function LoginPage() {
                                 }}
                             />
                         )}
-                    </motion.div>
+                        </motion.div>
+                    </Suspense>
                 </motion.div>
             </div>
         </div>
