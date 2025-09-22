@@ -4,7 +4,7 @@ export const SITE_CONFIG = {
     description: "Mobile massage experiences on the Crystal Coast — where luxury meets convenience.",
     url: "https://crystalcoastconcierge.com",
     phone: "+1 (252) 242-0784",
-    email: "info@crystalcoastconcierge.com",
+    email: "cameronaverittlmbt@crystalcoastmassage.com",
     address: "Crystal Coast, North Carolina"
 } as const
 

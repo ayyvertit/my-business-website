@@ -128,7 +128,7 @@ export default function ContactForm() {
               onChange={handleInputChange}
               required
               className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-teal-500 focus:border-transparent transition-colors"
-              placeholder="(252) 555-0123"
+              placeholder="(252) 242-0784"
             />
           </div>
 

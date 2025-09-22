@@ -85,7 +85,7 @@ export default function Footer() {
                   <Phone className="w-5 h-5 text-teal-400" />
                 </div>
                 <div>
-                  <p className="font-semibold text-white group-hover:text-teal-300 transition-colors duration-300">(252) 555-0123</p>
+                  <p className="font-semibold text-white group-hover:text-teal-300 transition-colors duration-300">(252) 242-0784</p>
                   <p className="text-sm">Call or text to book</p>
                 </div>
               </div>
@@ -94,7 +94,7 @@ export default function Footer() {
                   <Mail className="w-5 h-5 text-teal-400" />
                 </div>
                 <div>
-                  <p className="font-semibold text-white group-hover:text-teal-300 transition-colors duration-300">cameron@crystalcoastconcierge.com</p>
+                  <p className="font-semibold text-white group-hover:text-teal-300 transition-colors duration-300">cameronaverittlmbt@crystalcoastmassage.com</p>
                   <p className="text-sm">Email inquiries</p>
                 </div>
               </div>

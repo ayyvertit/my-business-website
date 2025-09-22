@@ -19,7 +19,7 @@ export default function ServiceAreaPage() {
 
   const contactInfo = {
     phone: "(252) 242-0784",
-    email: "cameron@crystalcoastconcierge.com",
+    email: "cameronaverittlmbt@crystalcoastmassage.com",
     note: "If you're outside this range, contact us directly to check availability."
   }
 
