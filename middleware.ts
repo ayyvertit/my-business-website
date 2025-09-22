@@ -6,8 +6,8 @@ const hasClerkSecret = !!process.env.CLERK_SECRET_KEY;
 export default hasClerkSecret
   ? clerkMiddleware()
   : function middleware() {
-      return NextResponse.next();
-    };
+    return NextResponse.next();
+  };
 
 export const config = {
   matcher: [

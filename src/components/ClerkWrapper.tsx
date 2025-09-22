@@ -1,7 +1,6 @@
 "use client"
 
 import { ClerkProvider } from "@clerk/nextjs"
-import { useState, useEffect } from "react"
 import Link from "next/link"
 
 interface ClerkWrapperProps {
@@ -9,17 +8,7 @@ interface ClerkWrapperProps {
 }
 
 export default function ClerkWrapper({ children }: ClerkWrapperProps) {
-  const [isClient, setIsClient] = useState(false)
-  const [clerkKey, setClerkKey] = useState<string | null>(null)
-
-  useEffect(() => {
-    setIsClient(true)
-    setClerkKey(process.env.NEXT_PUBLIC_CLERK_PUBLISHABLE_KEY || null)
-  }, [])
-
-  if (!isClient) {
-    return <>{children}</>
-  }
+  const clerkKey = process.env.NEXT_PUBLIC_CLERK_PUBLISHABLE_KEY || null
 
   if (!clerkKey || clerkKey === 'your_publishable_key_here') {
     return (
@@ -31,8 +20,8 @@ export default function ClerkWrapper({ children }: ClerkWrapperProps) {
           <p className="text-[var(--deep-tide)] dark:text-[var(--ocean-foam)] mb-6">
             Please configure your Clerk environment variables in Vercel.
           </p>
-          <Link 
-            href="/" 
+          <Link
+            href="/"
             className="inline-block bg-[var(--deep-tide)] hover:bg-[var(--deep-tide)]/90 text-white font-semibold px-6 py-3 rounded-lg transition-colors"
           >
             Return to Home
