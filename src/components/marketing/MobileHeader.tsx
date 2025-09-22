@@ -5,7 +5,7 @@ import { motion, AnimatePresence } from "framer-motion"
 import { Menu, X } from "lucide-react"
 import { ThemeToggle } from "../ui/ThemeToggle"
 import Image from "next/image"
-// import { UserButton, SignedIn, SignedOut } from "@clerk/nextjs" // Temporarily disabled
+import { SignedIn, SignedOut } from "@clerk/nextjs"
 
 export function MobileHeader() {
   const [isMenuOpen, setIsMenuOpen] = useState(false)

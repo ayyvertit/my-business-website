@@ -5,7 +5,7 @@ import Link from "next/link"
 import { ThemeToggle } from "../ui/ThemeToggle"
 import Image from "next/image"
 import { useRouter } from "next/navigation"
-// import { UserButton, SignedIn, SignedOut } from "@clerk/nextjs" // Temporarily disabled
+import { SignedIn, SignedOut } from "@clerk/nextjs"
 
 export function DesktopHeader() {
   const router = useRouter()
