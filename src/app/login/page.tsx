@@ -1,9 +1,8 @@
 "use client"
 
-// import { SignIn, SignUp } from "@clerk/nextjs" // Temporarily disabled
+import { SignIn, SignUp } from "@clerk/nextjs"
 import { useState } from "react"
 import { motion } from "framer-motion"
-import Link from "next/link"
 
 export default function LoginPage() {
     const [isSignIn, setIsSignIn] = useState(true)
@@ -49,28 +48,86 @@ export default function LoginPage() {
                         </button>
                     </div>
 
-                    {/* Temporarily disabled Clerk authentication */}
+                    {/* Clerk Components */}
                     <motion.div
                         key={isSignIn ? "signin" : "signup"}
                         initial={{ opacity: 0, x: 20 }}
                         animate={{ opacity: 1, x: 0 }}
                         transition={{ duration: 0.3 }}
-                        className="text-center p-8"
                     >
-                        <div className="bg-[var(--coastal-mist)]/20 dark:bg-[var(--ocean-foam)]/20 rounded-xl p-8 border border-[var(--coastal-mist)] dark:border-[var(--ocean-foam)]">
-                            <h3 className="text-xl font-bold text-[var(--deep-tide)] dark:text-white mb-4">
-                                Authentication Temporarily Disabled
-                            </h3>
-                            <p className="text-[var(--deep-tide)] dark:text-[var(--ocean-foam)] mb-6">
-                                User authentication is currently being set up. Please check back soon!
-                            </p>
-                            <Link 
-                                href="/" 
-                                className="inline-block bg-[var(--deep-tide)] hover:bg-[var(--deep-tide)]/90 text-white font-semibold px-6 py-3 rounded-lg transition-colors"
-                            >
-                                Return to Home
-                            </Link>
-                        </div>
+                        {isSignIn ? (
+                            <SignIn
+                                appearance={{
+                                    elements: {
+                                        formButtonPrimary: "bg-[var(--deep-tide)] hover:bg-[var(--deep-tide)]/90 text-white font-semibold",
+                                        card: "bg-transparent shadow-none",
+                                        headerTitle: "text-[var(--deep-tide)] dark:text-white font-bold text-xl",
+                                        headerSubtitle: "text-[var(--deep-tide)] dark:text-[var(--ocean-foam)] font-medium",
+                                        formFieldLabel: "text-[var(--deep-tide)] dark:text-white font-semibold",
+                                        formFieldInput: "bg-[var(--coastal-mist)]/80 dark:bg-[var(--ocean-foam)]/70 border-[var(--coastal-mist)] dark:border-[var(--ocean-foam)] text-[var(--deep-tide)] dark:text-white font-medium placeholder:text-[var(--deep-tide)]/70 dark:placeholder:text-[var(--ocean-foam)]/70",
+                                        footerActionLink: "text-[var(--deep-tide)] dark:text-[var(--ocean-foam)] font-semibold hover:text-[var(--deep-tide)]/80 dark:hover:text-white/80",
+                                        dividerLine: "bg-[var(--coastal-mist)] dark:bg-[var(--ocean-foam)]",
+                                        dividerText: "text-[var(--deep-tide)] dark:text-[var(--ocean-foam)] font-medium",
+                                        formFieldInputShowPasswordButton: "text-[var(--deep-tide)] dark:text-[var(--ocean-foam)]",
+                                        formFieldInputShowPasswordButtonIcon: "text-[var(--deep-tide)] dark:text-[var(--ocean-foam)]",
+                                        formResendCodeLink: "text-[var(--deep-tide)] dark:text-[var(--ocean-foam)] font-semibold",
+                                        formFieldRow: "text-[var(--deep-tide)] dark:text-[var(--ocean-foam)]",
+                                        formFieldHintText: "text-[var(--deep-tide)]/90 dark:text-[var(--ocean-foam)]/90 font-medium",
+                                        formFieldErrorText: "text-red-600 dark:text-red-400 font-semibold",
+                                        alertText: "text-[var(--deep-tide)] dark:text-[var(--ocean-foam)] font-medium",
+                                        alert: "bg-[var(--coastal-mist)]/60 dark:bg-[var(--ocean-foam)]/30 border-[var(--coastal-mist)] dark:border-[var(--ocean-foam)]",
+                                        socialButtonsBlockButton: "bg-[var(--coastal-mist)]/80 dark:bg-[var(--ocean-foam)]/70 border-[var(--coastal-mist)] dark:border-[var(--ocean-foam)] text-[var(--deep-tide)] dark:text-[var(--ocean-foam)] font-semibold hover:bg-[var(--coastal-mist)]/95 dark:hover:bg-[var(--ocean-foam)]/85",
+                                        socialButtonsBlockButtonText: "text-[var(--deep-tide)] dark:text-[var(--ocean-foam)] font-semibold",
+                                        formFieldAction: "text-[var(--deep-tide)] dark:text-[var(--ocean-foam)] font-semibold",
+                                        formFieldActionLink: "text-[var(--deep-tide)] dark:text-[var(--ocean-foam)] font-semibold hover:text-[var(--deep-tide)]/80 dark:hover:text-white/80",
+                                        identityPreviewText: "text-[var(--deep-tide)] dark:text-[var(--ocean-foam)] font-medium",
+                                        identityPreviewEditButton: "text-[var(--deep-tide)] dark:text-[var(--ocean-foam)] font-semibold",
+                                        modalBackdrop: "bg-black/50",
+                                        modalContent: "bg-white/95 dark:bg-[var(--deep-tide)]/95 backdrop-blur",
+                                        modalCard: "bg-transparent shadow-none",
+                                        modalContentRoot: "bg-transparent",
+                                        modalContentRootWithScroll: "bg-transparent",
+                                        modalContentRootWithoutScroll: "bg-transparent",
+                                    },
+                                }}
+                            />
+                        ) : (
+                            <SignUp
+                                appearance={{
+                                    elements: {
+                                        formButtonPrimary: "bg-[var(--deep-tide)] hover:bg-[var(--deep-tide)]/90 text-white font-semibold",
+                                        card: "bg-transparent shadow-none",
+                                        headerTitle: "text-[var(--deep-tide)] dark:text-white font-bold text-xl",
+                                        headerSubtitle: "text-[var(--deep-tide)] dark:text-[var(--ocean-foam)] font-medium",
+                                        formFieldLabel: "text-[var(--deep-tide)] dark:text-white font-semibold",
+                                        formFieldInput: "bg-[var(--coastal-mist)]/80 dark:bg-[var(--ocean-foam)]/70 border-[var(--coastal-mist)] dark:border-[var(--ocean-foam)] text-[var(--deep-tide)] dark:text-white font-medium placeholder:text-[var(--deep-tide)]/70 dark:placeholder:text-[var(--ocean-foam)]/70",
+                                        footerActionLink: "text-[var(--deep-tide)] dark:text-[var(--ocean-foam)] font-semibold hover:text-[var(--deep-tide)]/80 dark:hover:text-white/80",
+                                        dividerLine: "bg-[var(--coastal-mist)] dark:bg-[var(--ocean-foam)]",
+                                        dividerText: "text-[var(--deep-tide)] dark:text-[var(--ocean-foam)] font-medium",
+                                        formFieldInputShowPasswordButton: "text-[var(--deep-tide)] dark:text-[var(--ocean-foam)]",
+                                        formFieldInputShowPasswordButtonIcon: "text-[var(--deep-tide)] dark:text-[var(--ocean-foam)]",
+                                        formResendCodeLink: "text-[var(--deep-tide)] dark:text-[var(--ocean-foam)] font-semibold",
+                                        formFieldRow: "text-[var(--deep-tide)] dark:text-[var(--ocean-foam)]",
+                                        formFieldHintText: "text-[var(--deep-tide)]/90 dark:text-[var(--ocean-foam)]/90 font-medium",
+                                        formFieldErrorText: "text-red-600 dark:text-red-400 font-semibold",
+                                        alertText: "text-[var(--deep-tide)] dark:text-[var(--ocean-foam)] font-medium",
+                                        alert: "bg-[var(--coastal-mist)]/60 dark:bg-[var(--ocean-foam)]/30 border-[var(--coastal-mist)] dark:border-[var(--ocean-foam)]",
+                                        socialButtonsBlockButton: "bg-[var(--coastal-mist)]/80 dark:bg-[var(--ocean-foam)]/70 border-[var(--coastal-mist)] dark:border-[var(--ocean-foam)] text-[var(--deep-tide)] dark:text-[var(--ocean-foam)] font-semibold hover:bg-[var(--coastal-mist)]/95 dark:hover:bg-[var(--ocean-foam)]/85",
+                                        socialButtonsBlockButtonText: "text-[var(--deep-tide)] dark:text-[var(--ocean-foam)] font-semibold",
+                                        formFieldAction: "text-[var(--deep-tide)] dark:text-[var(--ocean-foam)] font-semibold",
+                                        formFieldActionLink: "text-[var(--deep-tide)] dark:text-[var(--ocean-foam)] font-semibold hover:text-[var(--deep-tide)]/80 dark:hover:text-white/80",
+                                        identityPreviewText: "text-[var(--deep-tide)] dark:text-[var(--ocean-foam)] font-medium",
+                                        identityPreviewEditButton: "text-[var(--deep-tide)] dark:text-[var(--ocean-foam)] font-semibold",
+                                        modalBackdrop: "bg-black/50",
+                                        modalContent: "bg-white/95 dark:bg-[var(--deep-tide)]/95 backdrop-blur",
+                                        modalCard: "bg-transparent shadow-none",
+                                        modalContentRoot: "bg-transparent",
+                                        modalContentRootWithScroll: "bg-transparent",
+                                        modalContentRootWithoutScroll: "bg-transparent",
+                                    },
+                                }}
+                            />
+                        )}
                     </motion.div>
                 </motion.div>
             </div>
