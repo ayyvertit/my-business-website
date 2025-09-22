@@ -56,16 +56,16 @@ export default function LoginPage() {
                         transition={{ duration: 0.3 }}
                         className="text-center p-8"
                     >
-                        <div className="bg-[var(--coastal-mist)]/60 dark:bg-[var(--ocean-foam)]/50 rounded-xl p-8 border border-[var(--coastal-mist)] dark:border-[var(--ocean-foam)]">
-                            <h3 className="text-xl font-bold text-[var(--deep-tide)] dark:text-white mb-4">
+                        <div className="bg-[var(--deep-tide)]/90 dark:bg-[var(--ocean-foam)]/80 rounded-xl p-8 border border-[var(--deep-tide)] dark:border-[var(--ocean-foam)] shadow-lg">
+                            <h3 className="text-xl font-bold text-white dark:text-[var(--deep-tide)] mb-4">
                                 Authentication Coming Soon
                             </h3>
-                            <p className="text-[var(--deep-tide)] dark:text-[var(--ocean-foam)] font-medium mb-6">
+                            <p className="text-white/90 dark:text-[var(--deep-tide)] font-medium mb-6">
                                 User authentication is currently being set up. Please check back soon!
                             </p>
                             <Link 
                                 href="/" 
-                                className="inline-block bg-[var(--deep-tide)] hover:bg-[var(--deep-tide)]/90 text-white font-semibold px-6 py-3 rounded-lg transition-colors"
+                                className="inline-block bg-white hover:bg-white/90 text-[var(--deep-tide)] font-semibold px-6 py-3 rounded-lg transition-colors shadow-lg"
                             >
                                 Return to Home
                             </Link>
