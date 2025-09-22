@@ -5,6 +5,7 @@ import { SITE_CONFIG } from "@/lib/constants"
 import { ThemeProvider } from "@/components/ui/ThemeProvider"
 import { ClerkProvider, SignedIn, SignedOut, UserButton } from "@clerk/nextjs"
 import { Suspense } from "react"
+import Link from "next/link"
 
 const inter = Inter({ subsets: ["latin"] })
 
@@ -35,12 +36,12 @@ export default function RootLayout({
                 <p className="text-[var(--deep-tide)] dark:text-[var(--ocean-foam)] mb-6">
                   Please configure your Clerk environment variables in Vercel.
                 </p>
-                <a 
+                <Link 
                   href="/" 
                   className="inline-block bg-[var(--deep-tide)] hover:bg-[var(--deep-tide)]/90 text-white font-semibold px-6 py-3 rounded-lg transition-colors"
                 >
                   Return to Home
-                </a>
+                </Link>
               </div>
             </div>
             {children}
