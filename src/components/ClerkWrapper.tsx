@@ -2,6 +2,7 @@
 
 import { ClerkProvider } from "@clerk/nextjs"
 import { useState, useEffect } from "react"
+import Link from "next/link"
 
 interface ClerkWrapperProps {
   children: React.ReactNode
@@ -30,12 +31,12 @@ export default function ClerkWrapper({ children }: ClerkWrapperProps) {
           <p className="text-[var(--deep-tide)] dark:text-[var(--ocean-foam)] mb-6">
             Please configure your Clerk environment variables in Vercel.
           </p>
-          <a 
+          <Link 
             href="/" 
             className="inline-block bg-[var(--deep-tide)] hover:bg-[var(--deep-tide)]/90 text-white font-semibold px-6 py-3 rounded-lg transition-colors"
           >
             Return to Home
-          </a>
+          </Link>
         </div>
       </div>
     )
