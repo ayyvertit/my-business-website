@@ -34,7 +34,7 @@ export default function ConfirmationPage() {
                 setBookingData({
                     customerName: "John Doe",
                     customerEmail: "john@example.com",
-                    customerPhone: "(252) 555-0123",
+                    customerPhone: "(252) 242-0784",
                     massageType: "Swedish Massage",
                     duration: "90 minutes",
                     preferredDate: "2024-02-15",
@@ -227,7 +227,7 @@ export default function ConfirmationPage() {
                             transition={{ duration: 0.8, delay: 0.4 }}
                         >
                             <h2 className="font-serif text-3xl sm:text-4xl font-bold text-[var(--deep-tide)] dark:text-white mb-6">
-                                                                 What&apos;s Next?
+                                What&apos;s Next?
                             </h2>
                             <div className="grid gap-8 sm:grid-cols-3 mt-12">
                                 <motion.div
@@ -277,7 +277,7 @@ export default function ConfirmationPage() {
                                         Confirmation Email
                                     </h3>
                                     <p className="text-[var(--coastal-mist)]">
-                                                                                 You&apos;ll receive a confirmation email with all the details shortly
+                                        You&apos;ll receive a confirmation email with all the details shortly
                                     </p>
                                 </motion.div>
                             </div>

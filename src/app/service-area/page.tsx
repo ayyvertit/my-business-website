@@ -18,7 +18,7 @@ export default function ServiceAreaPage() {
   ]
 
   const contactInfo = {
-    phone: "(252) 555-0123",
+    phone: "(252) 242-0784",
     email: "cameron@crystalcoastconcierge.com",
     note: "If you're outside this range, contact us directly to check availability."
   }
