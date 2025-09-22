@@ -18,6 +18,38 @@ export default function RootLayout({
 }: {
   children: React.ReactNode
 }) {
+  // Check if Clerk is properly configured
+  const isClerkConfigured = process.env.NEXT_PUBLIC_CLERK_PUBLISHABLE_KEY && 
+                           process.env.NEXT_PUBLIC_CLERK_PUBLISHABLE_KEY !== 'your_publishable_key_here'
+
+  if (!isClerkConfigured) {
+    return (
+      <html lang="en" suppressHydrationWarning>
+        <body className={inter.className}>
+          <ThemeProvider>
+            <div className="min-h-screen flex items-center justify-center bg-gradient-to-br from-[var(--ocean-foam)] to-[var(--white-sand)] dark:from-[var(--deep-tide)] dark:to-[var(--ocean-foam)]">
+              <div className="text-center p-8 bg-white/95 dark:bg-[var(--deep-tide)]/95 rounded-2xl shadow-xl">
+                <h1 className="text-2xl font-bold text-[var(--deep-tide)] dark:text-white mb-4">
+                  Authentication Setup Required
+                </h1>
+                <p className="text-[var(--deep-tide)] dark:text-[var(--ocean-foam)] mb-6">
+                  Please configure your Clerk environment variables in Vercel.
+                </p>
+                <a 
+                  href="/" 
+                  className="inline-block bg-[var(--deep-tide)] hover:bg-[var(--deep-tide)]/90 text-white font-semibold px-6 py-3 rounded-lg transition-colors"
+                >
+                  Return to Home
+                </a>
+              </div>
+            </div>
+            {children}
+          </ThemeProvider>
+        </body>
+      </html>
+    )
+  }
+
   return (
     <ClerkProvider
       publishableKey={process.env.NEXT_PUBLIC_CLERK_PUBLISHABLE_KEY}
