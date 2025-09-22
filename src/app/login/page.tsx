@@ -56,11 +56,11 @@ export default function LoginPage() {
                         transition={{ duration: 0.3 }}
                         className="text-center p-8"
                     >
-                        <div className="bg-[var(--coastal-mist)]/20 dark:bg-[var(--ocean-foam)]/20 rounded-xl p-8 border border-[var(--coastal-mist)] dark:border-[var(--ocean-foam)]">
+                        <div className="bg-[var(--coastal-mist)]/60 dark:bg-[var(--ocean-foam)]/50 rounded-xl p-8 border border-[var(--coastal-mist)] dark:border-[var(--ocean-foam)]">
                             <h3 className="text-xl font-bold text-[var(--deep-tide)] dark:text-white mb-4">
                                 Authentication Coming Soon
                             </h3>
-                            <p className="text-[var(--deep-tide)] dark:text-[var(--ocean-foam)] mb-6">
+                            <p className="text-[var(--deep-tide)] dark:text-[var(--ocean-foam)] font-medium mb-6">
                                 User authentication is currently being set up. Please check back soon!
                             </p>
                             <Link 
