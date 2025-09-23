@@ -81,7 +81,7 @@ export function HeroSection() {
           >
             <div className="flex items-center space-x-3">
               <Shield className="w-5 h-5 text-[var(--sea-glass)] flex-shrink-0" />
-              <span>Licensed & Insured (NC #22913)</span>
+              <span>Licensed & Insured — ABMP (NC #22913)</span>
             </div>
             <div className="flex items-center space-x-3">
               <Truck className="w-5 h-5 text-[var(--coral-blush)] flex-shrink-0" />

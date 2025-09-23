@@ -123,10 +123,10 @@ export default function AboutPage() {
               >
                 <Shield className="w-12 h-12 text-[var(--coral-blush)] mx-auto mb-4" />
                 <h3 className="font-serif text-xl font-bold text-[var(--deep-tide)] dark:text-white mb-2">
-                  Insured & Professional
+                  ABMP Insured Professional
                 </h3>
                 <p className="text-[var(--coastal-mist)]">
-                  Fully insured with professional liability coverage for your peace of mind
+                  Fully insured through ABMP with professional liability coverage for your peace of mind
                 </p>
               </motion.div>
 
