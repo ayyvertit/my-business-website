@@ -1,6 +1,11 @@
 export default function DebugEnvPage() {
   const clerkKey = process.env.NEXT_PUBLIC_CLERK_PUBLISHABLE_KEY
   const secretKey = process.env.CLERK_SECRET_KEY
+  const stripePk = process.env.NEXT_PUBLIC_STRIPE_PUBLISHABLE_KEY
+  const stripeSk = process.env.STRIPE_SECRET_KEY
+
+  const mask = (v?: string) => (v ? `✅ ${v.substring(0, 12)}...` : '❌ Not set')
+  const stripeMode = stripePk?.startsWith('pk_live_') ? 'Live' : (stripePk?.startsWith('pk_test_') ? 'Test' : 'Unknown')
   
   return (
     <div className="min-h-screen bg-gradient-to-br from-[var(--ocean-foam)] to-[var(--white-sand)] dark:from-[var(--deep-tide)] dark:to-[var(--ocean-foam)] flex items-center justify-center p-4">
@@ -28,12 +33,32 @@ export default function DebugEnvPage() {
             </p>
           </div>
           
+          <div>
+            <h3 className="font-semibold text-[var(--deep-tide)] dark:text-white mb-2">
+              NEXT_PUBLIC_STRIPE_PUBLISHABLE_KEY:
+            </h3>
+            <p className="text-sm text-[var(--deep-tide)] dark:text-[var(--ocean-foam)] break-all">
+              {mask(stripePk)}
+            </p>
+          </div>
+
+          <div>
+            <h3 className="font-semibold text-[var(--deep-tide)] dark:text-white mb-2">
+              STRIPE_SECRET_KEY:
+            </h3>
+            <p className="text-sm text-[var(--deep-tide)] dark:text-[var(--ocean-foam)] break-all">
+              {mask(stripeSk)}
+            </p>
+          </div>
+
           <div className="mt-6 p-4 bg-[var(--coastal-mist)]/20 dark:bg-[var(--ocean-foam)]/20 rounded-lg">
             <h3 className="font-semibold text-[var(--deep-tide)] dark:text-white mb-2">
               Status:
             </h3>
             <p className="text-sm text-[var(--deep-tide)] dark:text-[var(--ocean-foam)]">
-              {clerkKey && secretKey ? '✅ All environment variables are configured' : '❌ Missing environment variables'}
+              {clerkKey && secretKey && stripePk && stripeSk
+                ? `✅ All environment variables are configured (${stripeMode} mode)`
+                : '❌ Missing environment variables'}
             </p>
           </div>
         </div>
