@@ -23,28 +23,40 @@ export default function ConfirmationPage() {
     const [loading, setLoading] = useState(true)
 
     useEffect(() => {
-        // In a real app, you'd fetch the session data from your backend
-        // For now, we'll simulate the booking data
         const urlParams = new URLSearchParams(window.location.search)
         const sessionId = urlParams.get('session_id')
 
-        if (sessionId) {
-            // Simulate fetching booking data
-            setTimeout(() => {
-                setBookingData({
-                    customerName: "John Doe",
-                    customerEmail: "john@example.com",
-                    customerPhone: "(252) 242-0784",
-                    massageType: "Swedish Massage",
-                    duration: "90 minutes",
-                    preferredDate: "2024-02-15",
-                    preferredTime: "2:00 PM",
-                    additionalNotes: "Please bring extra towels",
-                    amount: 150
-                })
+        async function loadSession() {
+            if (!sessionId) {
                 setLoading(false)
-            }, 1000)
+                return
+            }
+            try {
+                const res = await fetch(`/api/checkout-session?session_id=${sessionId}`)
+                const data = await res.json()
+                if (data && !data.error) {
+                    const md = data.metadata || {}
+                    const cd = data.customer_details || {}
+                    setBookingData({
+                        customerName: cd.name || md.customerName || '',
+                        customerEmail: cd.email || md.customerEmail || '',
+                        customerPhone: md.customerPhone || '',
+                        massageType: md.massageType || '',
+                        duration: md.duration || '',
+                        preferredDate: md.preferredDate || '',
+                        preferredTime: md.preferredTime || '',
+                        additionalNotes: md.additionalNotes || '',
+                        amount: (data.amount_total || 0) / 100
+                    })
+                }
+            } catch (e) {
+                // fall through
+            } finally {
+                setLoading(false)
+            }
         }
+
+        loadSession()
     }, [])
 
     const formatDate = (dateString: string) => {
