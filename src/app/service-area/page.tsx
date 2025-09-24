@@ -199,7 +199,7 @@ export default function ServiceAreaPage() {
               </motion.div>
 
               <motion.div
-                className="grid gap-6 sm:grid-cols-2"
+                className="grid gap-6 sm:grid-cols-1 lg:grid-cols-2"
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
