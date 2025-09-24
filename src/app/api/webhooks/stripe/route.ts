@@ -10,23 +10,32 @@ const webhookSecret = process.env.STRIPE_WEBHOOK_SECRET!
 const resend = new Resend(process.env.RESEND_API_KEY!)
 
 export async function POST(request: NextRequest) {
+  console.log('🔔 Webhook received!')
+  
   const body = await request.text()
   const signature = request.headers.get('stripe-signature')!
+  
+  console.log('Signature present:', !!signature)
+  console.log('Webhook secret present:', !!webhookSecret)
 
   let event: Stripe.Event
 
   try {
     event = stripe.webhooks.constructEvent(body, signature, webhookSecret)
+    console.log('✅ Event verified:', event.type)
   } catch (err) {
-    console.error('Webhook signature verification failed:', err)
+    console.error('❌ Webhook signature verification failed:', err)
     return NextResponse.json({ error: 'Invalid signature' }, { status: 400 })
   }
 
   if (event.type === 'checkout.session.completed') {
+    console.log('💰 Checkout session completed, sending email...')
     const session = event.data.object as Stripe.Checkout.Session
     
     // Send booking notification email
     await sendBookingNotification(session)
+  } else {
+    console.log('ℹ️ Event type not handled:', event.type)
   }
 
   return NextResponse.json({ received: true })
