@@ -214,12 +214,12 @@ export default function ServiceAreaPage() {
                     <p className="text-white/90">{contactInfo.phone}</p>
                   </div>
                 </div>
-                <div className="flex items-center gap-3 pr-6">
-                  <div className="w-10 h-10 bg-white/20 rounded-full flex items-center justify-center flex-shrink-0">
-                    <Mail className="w-5 h-5" />
+                <div className="flex items-center gap-2 pr-2">
+                  <div className="w-8 h-8 bg-white/20 rounded-full flex items-center justify-center flex-shrink-0">
+                    <Mail className="w-4 h-4" />
                   </div>
                   <div className="flex-1 min-w-0">
-                    <h4 className="font-semibold text-base">Email Us</h4>
+                    <h4 className="font-semibold text-sm">Email Us</h4>
                     <p className="text-white/90 text-xs overflow-hidden whitespace-nowrap">{contactInfo.email}</p>
                   </div>
                 </div>
