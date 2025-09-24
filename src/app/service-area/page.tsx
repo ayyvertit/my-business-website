@@ -220,7 +220,7 @@ export default function ServiceAreaPage() {
                   </div>
                   <div>
                     <h4 className="font-semibold text-lg">Email Us</h4>
-                    <p className="text-white/90 break-all text-sm sm:text-base">{contactInfo.email}</p>
+                    <p className="text-white/90 text-sm sm:text-base overflow-x-auto">{contactInfo.email}</p>
                   </div>
                 </div>
               </motion.div>
